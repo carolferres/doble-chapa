@@ -296,7 +296,9 @@
     letter-spacing: 0.12em;
     animation: marquee 42s linear infinite;
   }
-  .strip-inner span { display: inline-flex; align-items: center; gap: 48px; }
+  .strip-inner span { align-items: center; gap: 48px; }
+  body.lang-pt .strip-inner span[data-lang-pt],
+  body.lang-es .strip-inner span[data-lang-es] { display: inline-flex; }
   .strip-inner span::after {
     content: "◆";
     color: var(--red);
@@ -882,7 +884,7 @@
   .contato-info {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 12px;
     text-align: right;
   }
   @media (max-width: 760px) {
@@ -907,11 +909,12 @@
   }
   .contato-item a, .contato-item span {
     font-family: 'Fraunces', serif;
-    font-size: 22px;
+    font-size: 16px;
     color: var(--paper);
     text-decoration: none;
     transition: color 0.2s;
     font-weight: 400;
+    line-height: 1.4;
   }
   .contato-item a:hover { color: var(--blue); }
 
@@ -1097,22 +1100,22 @@
     <span data-lang-pt>Desenvolvimento de Roteiros</span>
     <span data-lang-pt>Coprodução Brasil · Uruguai</span>
     <span data-lang-pt>José Ignacio · Uruguai</span>
-    <span data-lang-pt>Ibero-América</span>
+    <span data-lang-pt>Latino-América</span>
     <span data-lang-pt>Residência Binacional</span>
     <span data-lang-pt>Desenvolvimento de Roteiros</span>
     <span data-lang-pt>Coprodução Brasil · Uruguai</span>
     <span data-lang-pt>José Ignacio · Uruguai</span>
-    <span data-lang-pt>Ibero-América</span>
+    <span data-lang-pt>Latino-América</span>
     <span data-lang-es>Residencia Binacional</span>
     <span data-lang-es>Desarrollo de Guiones</span>
     <span data-lang-es>Coproducción Brasil · Uruguay</span>
     <span data-lang-es>José Ignacio · Uruguay</span>
-    <span data-lang-es>Iberoamérica</span>
+    <span data-lang-es>Latinoamérica</span>
     <span data-lang-es>Residencia Binacional</span>
     <span data-lang-es>Desarrollo de Guiones</span>
     <span data-lang-es>Coproducción Brasil · Uruguay</span>
     <span data-lang-es>José Ignacio · Uruguay</span>
-    <span data-lang-es>Iberoamérica</span>
+    <span data-lang-es>Latinoamérica</span>
   </div>
 </div>
 
@@ -1233,7 +1236,7 @@
           Programação anual de residências intensivas e encontros abertos — rotativos entre a sede uruguaia e cidades parceiras no Brasil.
         </p>
         <p data-lang-es>
-          Programación anual de residencias intensivas y encuentros abiertos — rotativos entre la sede uruguaya y ciudades socias en Brasil.
+          Programación anual de residencias intensivas y encuentros abiertos — rotativos entre la sede uruguaya y ciudades aliadas en Brasil.
         </p>
       </div>
 
@@ -1247,7 +1250,7 @@
           Mentoria continuada após a residência — apoio ao desenvolvimento, submissão a editais e aproximação com produtoras e mercado.
         </p>
         <p data-lang-es>
-          Mentoría continuada después de la residencia — apoyo al desarrollo, presentación a convocatorias y acercamiento a productoras y mercado.
+          Mentoría continuada después de la residencia — apoyo al desarrollo, postulación a convocatorias y acercamiento a productoras y mercado.
         </p>
       </div>
     </div>
@@ -1270,7 +1273,7 @@
         A Casa Doble Chapa opera como ponte entre duas instituições já consolidadas da agenda latino-americana — o <strong>Jose Ignacio International Film Festival (JIIFF)</strong> em janeiro e a <strong>Mostra Internacional de Cinema em São Paulo</strong> em outubro — transformando o intervalo entre os dois em um processo criativo contínuo de desenvolvimento, coprodução e circulação.
       </p>
       <p data-lang-es>
-        Casa Doble Chapa opera como puente entre dos instituciones ya consolidadas de la agenda latinoamericana — el <strong>Jose Ignacio International Film Festival (JIIFF)</strong> en enero y la <strong>Mostra Internacional de Cinema em São Paulo</strong> en octubre — transformando el intervalo entre ambas en un proceso creativo continuo de desarrollo, coproducción y circulación.
+        Casa Doble Chapa opera como puente entre dos instituciones ya consolidadas de la agenda latinoamericana — el <strong>Jose Ignacio International Film Festival (JIIFF)</strong> en enero y la <strong>Mostra Internacional de Cinema en São Paulo</strong> en octubre — transformando el intervalo entre ambas en un proceso creativo continuo de desarrollo, coproducción y circulación.
       </p>
     </div>
 
@@ -1284,7 +1287,10 @@
           <span data-lang-pt>Mostra SP</span>
           <span data-lang-es>Mostra SP</span>
         </h3>
-        <div class="date crimson-text">Mostra Internacional de Cinema em São Paulo</div>
+        <div class="date crimson-text">
+          <span data-lang-pt>Mostra Internacional de Cinema em São Paulo</span>
+          <span data-lang-es>Mostra Internacional de Cinema en São Paulo</span>
+        </div>
         <p data-lang-pt>
           Momento de circulação, mercado e conexão com a indústria brasileira. Os projetos desenvolvidos na Casa chegam prontos para pitching, coprodução e rodadas de negócios em um dos principais festivais da América Latina.
         </p>
@@ -1358,7 +1364,7 @@
           <span data-lang-es>Mercado</span>
         </h4>
         <p data-lang-pt>Apresentação dos projetos na Mostra Internacional de Cinema em São Paulo.</p>
-        <p data-lang-es>Presentación de los proyectos en la Mostra Internacional de Cinema em São Paulo.</p>
+        <p data-lang-es>Presentación de los proyectos en la Mostra Internacional de Cinema en São Paulo.</p>
       </div>
     </div>
   </div>
@@ -1447,8 +1453,8 @@
         <div class="contato-info">
           <div class="contato-item">
             <div class="tag">Carolina Ferrés</div>
-            <span data-lang-pt>Idealizadora · Casa Doble Chapa</span>
-            <span data-lang-es>Ideadora · Casa Doble Chapa</span>
+            <span data-lang-pt>Idealizadora</span>
+            <span data-lang-es>Ideadora</span>
           </div>
           <div class="contato-item">
             <div class="tag">
