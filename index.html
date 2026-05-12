@@ -942,19 +942,28 @@
   /* ====== RESPONSIVE ====== */
   @media (max-width: 900px) {
     .hero { padding: 60px 0 80px; }
-    .hero::before { display: none; }
     .hero-grid,
     .projeto-grid,
     .casa-grid,
     .ide-grid,
     .contato-grid { grid-template-columns: 1fr; gap: 48px; }
-    .hero-plate { display: none; }
+    .hero::before {
+      top: auto;
+      bottom: 0;
+      right: -20px;
+      width: 90%;
+      height: 52%;
+      transform: skewX(-6deg);
+      clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .hero-plate { margin-top: 8px; }
+    .plate-stack { padding: 12px 0; gap: 22px; align-items: flex-end; padding-right: 6px; }
+    .plate-wrap { max-width: 88%; }
     .pilares-grid { grid-template-columns: 1fr; }
     .pilar { border-right: none; border-bottom: 1.5px solid var(--rule-strong); }
     .pilar:last-child { border-bottom: none; }
     .ponte-diagram { grid-template-columns: 1fr; }
     .ponte-arrow { padding: 8px 0; }
-    .ponte-arrow .circle { transform: rotate(90deg); }
     .ponte-cycle { grid-template-columns: 1fr 1fr; }
     .cycle-step:nth-child(2n) { border-right: none; }
     .contato-right { justify-self: start; text-align: left; }
