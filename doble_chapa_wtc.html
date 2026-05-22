@@ -1,0 +1,2278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doble Chapa — Internacionalize sua empresa pelo Uruguai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #e8e8e8;
+    --bg-elev: #f1f1f1;
+    --ink: #1a1a1a;
+    --ink-soft: #3a3a3a;
+    --ink-mute: #6b6b6b;
+    --line: #cfcfcf;
+    --black: #000000;
+    --white: #ffffff;
+    --accent: #000000;
+    --gold: #e8c93a;
+    --sidebar-w: 240px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--bg);
+    font-family: 'Roboto', sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+  }
+
+  /* ============ SIDEBAR ============ */
+  .sidebar {
+    width: var(--sidebar-w);
+    min-width: var(--sidebar-w);
+    background: var(--black);
+    color: var(--white);
+    padding: 40px 28px 32px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 50;
+    overflow-y: auto;
+  }
+
+  .sidebar-brand {
+    margin-bottom: 48px;
+  }
+
+  .sidebar-brand .label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 8px;
+  }
+
+  .sidebar-brand h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+
+  .sidebar-brand .sub {
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.65);
+    margin-top: 8px;
+    line-height: 1.45;
+  }
+
+  .nav-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 14px;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+
+  .nav-item {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.7);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: left;
+    padding: 10px 12px;
+    cursor: pointer;
+    border-radius: 2px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    transition: all 0.18s ease;
+    line-height: 1.35;
+  }
+
+  .nav-item:hover {
+    background: rgba(255,255,255,0.06);
+    color: var(--white);
+  }
+
+  .nav-item.active {
+    background: var(--white);
+    color: var(--black);
+    font-weight: 600;
+  }
+
+  .nav-item .num {
+    font-size: 10px;
+    font-weight: 500;
+    opacity: 0.6;
+    min-width: 16px;
+  }
+
+  .nav-item.active .num {
+    opacity: 0.5;
+  }
+
+  .sidebar-footer {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+
+  .sidebar-footer strong {
+    color: var(--white);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 11px;
+  }
+
+  /* ============ MAIN ============ */
+  .main {
+    flex: 1;
+    min-width: 0;
+    padding: 0;
+  }
+
+  .page {
+    display: none;
+    min-height: 100vh;
+    padding: 64px 80px 80px;
+    max-width: 920px;
+  }
+
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ============ PAGE HEADER ============ */
+  .page-num {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 16px;
+  }
+
+  .page-title {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  .page-lead {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 48px;
+    max-width: 720px;
+  }
+
+  /* ============ TAG (estilo tarja preta das peças) ============ */
+  .tag {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    margin-bottom: 24px;
+  }
+
+  .tag-lg {
+    padding: 16px 28px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 32px;
+  }
+
+  /* ============ BODY TEXT ============ */
+  .body p {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  .body p strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ============ HERO PAGE ============ */
+  .hero {
+    padding: 0;
+    max-width: none;
+  }
+
+  .hero-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-size: cover;
+    background-position: center;
+    background-color: #2a2a2a;
+  }
+
+  .hero-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.25) 100%);
+  }
+
+  .hero-tag {
+    position: absolute;
+    left: 0;
+    top: 36%;
+    background: var(--black);
+    color: var(--white);
+    padding: 22px 40px;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    z-index: 2;
+    max-width: 80%;
+    line-height: 1.15;
+  }
+
+  .hero-url {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    font-size: 12px;
+    color: var(--white);
+    font-weight: 400;
+    z-index: 2;
+    background: rgba(0,0,0,0.5);
+    padding: 4px 10px;
+  }
+
+  .hero-content {
+    padding: 56px 80px 80px;
+    max-width: 920px;
+  }
+
+  .hero-content .brand-block {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    padding: 14px 22px;
+    margin-bottom: 40px;
+  }
+
+  .hero-content .brand-block .wtc-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-content .brand-block svg {
+    fill: var(--white);
+  }
+
+  .hero-content .brand-block .wtc-text {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-content .brand-block .wtc-text small {
+    font-size: 9px;
+    font-weight: 500;
+    opacity: 0.8;
+    display: block;
+  }
+
+  .hero-content h2 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 12px;
+  }
+
+  .hero-content .subtitle {
+    font-size: 15px;
+    color: var(--ink-mute);
+    font-weight: 400;
+    margin-bottom: 36px;
+  }
+
+  .hero-content .lead {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 700px;
+    margin-bottom: 48px;
+  }
+
+  /* ============ FLOW DIAGRAM ============ */
+  .flow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 40px 0 32px;
+  }
+
+  .flow-step {
+    background: #707b95;
+    color: var(--white);
+    padding: 28px 22px;
+    position: relative;
+    border: 1px solid #707b95;
+  }
+
+  .flow-step .step-num {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .flow-step .step-actor {
+    display: inline-block;
+    background: rgba(0,0,0,0.22);
+    color: var(--gold);
+    border: 1px solid rgba(232,201,58,0.35);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .flow-step h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    color: var(--white);
+  }
+
+  .flow-step p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.82);
+    max-width: none;
+    margin: 0;
+  }
+
+  /* ============ HIGHLIGHT BOXES (QUADRADOS) ============ */
+  .highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 40px 0 32px;
+  }
+
+  @media (max-width: 1100px) and (min-width: 901px) {
+    .highlights {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .highlight-box h4 { font-size: 18px; }
+    .highlight-box p { font-size: 12.5px; }
+    .highlight-box .hb-body { padding: 18px 18px 20px; }
+  }
+
+  .highlight-box {
+    background: #707b95;
+    color: var(--white);
+    border: 1px solid #707b95;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    padding: 28px 22px;
+  }
+
+  .highlight-box .hb-num {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .highlight-box .hb-tag {
+    display: inline-block;
+    background: rgba(0,0,0,0.22);
+    color: var(--gold);
+    border: 1px solid rgba(232,201,58,0.35);
+    padding: 5px 12px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    align-self: flex-start;
+    width: auto;
+  }
+
+  .highlight-box .hb-body {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+  }
+
+  .highlight-box h4 {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    margin-bottom: 10px;
+    color: var(--white);
+  }
+
+  .highlight-box p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.82);
+    margin: 0;
+    max-width: none;
+  }
+
+  /* Variação alta dos boxes (para listas internas) */
+  .highlights.tall .highlight-box {
+    aspect-ratio: auto;
+    min-height: 320px;
+    padding: 28px 22px;
+  }
+
+  .highlights.tall .highlight-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 14px 0 0;
+  }
+
+  .highlights.tall .highlight-box ul li {
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.82);
+    padding: 6px 0 6px 14px;
+    position: relative;
+  }
+
+  .highlights.tall .highlight-box ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ============ PROBLEMAS / BENEFÍCIOS GRID ============ */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .card {
+    background: #707b95;
+    color: var(--white);
+    padding: 28px 22px;
+    border: 1px solid #707b95;
+    position: relative;
+  }
+
+  .card .card-num {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .card .card-tag {
+    display: inline-block;
+    background: rgba(0,0,0,0.22);
+    color: var(--gold);
+    border: 1px solid rgba(232,201,58,0.35);
+    padding: 5px 12px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    color: var(--white);
+  }
+
+  .card p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.82);
+    margin: 0;
+    max-width: none;
+  }
+
+  /* ============ BENEFÍCIOS LIST ============ */
+  .benefits-list {
+    list-style: none;
+    margin-top: 32px;
+  }
+
+  .benefits-list li {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .benefits-list li:last-child {
+    border-bottom: none;
+  }
+
+  .benefits-list .b-num {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-mute);
+    letter-spacing: 0.05em;
+  }
+
+  .benefits-list h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .benefits-list p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* ============ SETORES PILLS ============ */
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 32px;
+  }
+
+  .pill {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* ============ VALORES (PRICING) ============ */
+  .pricing-block {
+    background: #707b95;
+    color: var(--white);
+    padding: 40px;
+    margin-top: 32px;
+    border: 1px solid #707b95;
+  }
+
+  .price-headline {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+
+  .price-amount {
+    display: inline-block;
+    background: rgba(0,0,0,0.22);
+    color: var(--gold);
+    border: 1px solid rgba(232,201,58,0.35);
+    padding: 5px 12px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .price-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 500;
+  }
+
+  .pricing-list {
+    list-style: none;
+  }
+
+  .pricing-list li {
+    padding: 12px 0;
+    padding-left: 22px;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.88);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .pricing-list li:last-child {
+    border-bottom: none;
+  }
+
+  .pricing-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ============ ESTRUTURA DE REMUNERAÇÃO (duas colunas) ============ */
+  .fee-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .fee-card {
+    background: #707b95;
+    color: var(--white);
+    border: 1px solid #707b95;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fee-card .fee-label {
+    display: inline-block;
+    background: rgba(0,0,0,0.22);
+    color: var(--gold);
+    border: 1px solid rgba(232,201,58,0.35);
+    padding: 5px 12px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    align-self: flex-start;
+  }
+
+  .fee-card .fee-value {
+    color: var(--white);
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .fee-card .fee-period {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 20px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .fee-card .fee-desc {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ============ TABELA COMPARATIVA ============ */
+  .compare-block {
+    margin-top: 48px;
+    background: #707b95;
+    color: var(--white);
+    padding: 40px;
+    border: 1px solid #707b95;
+  }
+
+  .compare-block h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .compare-block .compare-intro {
+    font-size: 14px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.6;
+    margin-bottom: 28px;
+    max-width: 720px;
+  }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.18);
+    font-size: 14px;
+  }
+
+  .compare-table thead th {
+    background: rgba(0,0,0,0.25);
+    color: var(--white);
+    text-align: left;
+    padding: 14px 18px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255,255,255,0.18);
+  }
+
+  .compare-table thead th:not(:first-child) {
+    text-align: left;
+  }
+
+  .compare-table tbody td {
+    padding: 16px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.88);
+    font-weight: 500;
+    vertical-align: top;
+  }
+
+  .compare-table tbody td:first-child {
+    font-weight: 700;
+    color: var(--white);
+    width: 32%;
+  }
+
+  .compare-table tbody td:not(:first-child) {
+    text-align: left;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .compare-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .compare-table .savings-pos {
+    color: #7ee0a4;
+    font-weight: 700;
+  }
+
+  .compare-table .savings-neutral {
+    color: rgba(255,255,255,0.55);
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .compare-footnote {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.55;
+    margin-top: 18px;
+    font-style: italic;
+  }
+
+  /* ============ AUDIENCE BLOCK ============ */
+  .audience-block {
+    margin-top: 48px;
+    background: #707b95;
+    color: var(--white);
+    padding: 40px;
+    border: 1px solid #707b95;
+  }
+
+  .audience-block h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .audience-block .audience-intro {
+    font-size: 14px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.6;
+    margin-bottom: 28px;
+    max-width: 720px;
+  }
+
+  .audience-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .audience-card {
+    background: rgba(0,0,0,0.18);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 28px;
+  }
+
+  .audience-tag {
+    display: inline-block;
+    background: rgba(0,0,0,0.22);
+    color: var(--gold);
+    border: 1px solid rgba(232,201,58,0.35);
+    padding: 5px 12px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .audience-card h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+    letter-spacing: -0.005em;
+  }
+
+  .audience-card p {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ============ PHASES BLOCK ============ */
+  .phases-block {
+    margin-top: 48px;
+    background: #707b95;
+    color: var(--white);
+    padding: 40px;
+    border: 1px solid #707b95;
+  }
+
+  .phases-block h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .phases-block .phases-intro {
+    font-size: 14px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.6;
+    margin-bottom: 28px;
+    max-width: 760px;
+  }
+
+  .phases-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .phase-card {
+    background: rgba(0,0,0,0.18);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .phase-tag {
+    display: inline-block;
+    background: rgba(0,0,0,0.22);
+    color: var(--gold);
+    border: 1px solid rgba(232,201,58,0.35);
+    padding: 5px 12px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    align-self: flex-start;
+  }
+
+  .phase-card h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+    letter-spacing: -0.005em;
+  }
+
+  .phase-fee {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+
+  .phase-fee span {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0;
+  }
+
+  .phase-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.55;
+    margin-bottom: 18px;
+  }
+
+  .phase-list {
+    list-style: none;
+    margin-top: auto;
+  }
+
+  .phase-list li {
+    padding: 9px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.88);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .phase-list li:last-child {
+    border-bottom: none;
+  }
+
+  .phase-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .phases-footnote {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.55;
+    margin-top: 24px;
+    font-style: italic;
+  }
+
+  /* ============ TAX NOTE ============ */
+  .tax-note {
+    margin-top: 32px;
+    padding: 32px 40px;
+    background: var(--white);
+    border-left: 3px solid #707b95;
+  }
+
+  .tax-note h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 12px;
+    letter-spacing: -0.005em;
+  }
+
+  .tax-note p {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ============ BREAK-EVEN — DETALHAMENTO ============ */
+  .breakeven-detail {
+    margin-top: 32px;
+    background: #707b95;
+    color: var(--white);
+    padding: 40px;
+    border: 1px solid #707b95;
+  }
+
+  .breakeven-detail h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .breakeven-detail .breakeven-intro {
+    font-size: 14px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.6;
+    margin-bottom: 28px;
+    max-width: 720px;
+  }
+
+  .breakeven-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .breakeven-card {
+    background: rgba(0,0,0,0.12);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 28px 28px 24px;
+  }
+
+  .breakeven-card h4 {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 18px;
+  }
+
+  .breakeven-card h4 strong {
+    display: block;
+    font-size: 16px;
+    color: var(--white);
+    letter-spacing: -0.005em;
+    text-transform: none;
+    margin-top: 6px;
+    font-weight: 700;
+  }
+
+  .breakeven-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+
+  .breakeven-table td {
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.85);
+    line-height: 1.4;
+  }
+
+  .breakeven-table td:last-child {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    white-space: nowrap;
+    padding-left: 12px;
+  }
+
+  .breakeven-table tr.total td {
+    border-top: 2px solid rgba(255,255,255,0.5);
+    border-bottom: none;
+    padding-top: 14px;
+    font-weight: 700;
+    color: var(--white);
+    font-size: 14px;
+  }
+
+  .breakeven-table tr.zero td:last-child {
+    color: #7ee0a4;
+    font-weight: 700;
+  }
+
+  /* ============ POR QUE WTC / IMAGE BLOCK ============ */
+  .image-block {
+    width: calc(100% + 0px);
+    aspect-ratio: 21/9;
+    background-size: cover;
+    background-position: center;
+    margin: 0 0 40px;
+  }
+
+  /* ============ CONTATO ============ */
+  .contato-block {
+    background: #707b95;
+    color: var(--white);
+    padding: 56px 48px;
+    margin-top: 40px;
+    border: 1px solid #707b95;
+  }
+
+  .contato-block h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .contato-block .contato-line {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+  }
+
+  .contato-block .contato-line strong {
+    color: var(--white);
+    font-weight: 600;
+    margin-right: 8px;
+  }
+
+  .contato-block .contato-url {
+    margin-top: 32px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 24px;
+  }
+
+  /* ============ MENU MOBILE TOGGLE ============ */
+  .menu-toggle {
+    display: none;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 100;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-toggle span,
+  .menu-toggle span::before,
+  .menu-toggle span::after {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--white);
+    position: relative;
+    transition: all 0.25s ease;
+  }
+
+  .menu-toggle span::before,
+  .menu-toggle span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  .menu-toggle span::before { top: -6px; }
+  .menu-toggle span::after { top: 6px; }
+
+  .menu-toggle.open span { background: transparent; }
+  .menu-toggle.open span::before { transform: rotate(45deg); top: 0; }
+  .menu-toggle.open span::after { transform: rotate(-45deg); top: 0; }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 900px) {
+    body { flex-direction: column; }
+
+    .menu-toggle {
+      display: flex;
+    }
+
+    .sidebar {
+      position: fixed;
+      width: 100%;
+      max-width: 280px;
+      height: 100vh;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      box-shadow: 2px 0 30px rgba(0,0,0,0.4);
+    }
+
+    .sidebar.open {
+      transform: translateX(0);
+    }
+
+    .page {
+      padding: 64px 20px 48px;
+      max-width: 100%;
+    }
+
+    .page-num {
+      margin-bottom: 12px;
+    }
+
+    .page-title {
+      font-size: 26px;
+      margin-bottom: 18px;
+      line-height: 1.15;
+    }
+
+    .page-lead {
+      font-size: 14.5px;
+      line-height: 1.55;
+      margin-bottom: 32px;
+    }
+
+    .body p {
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+
+    .tag-lg { font-size: 18px; padding: 14px 20px; }
+
+    /* HERO MOBILE */
+    .hero {
+      padding: 0;
+    }
+
+    .hero-image {
+      aspect-ratio: 4/3;
+    }
+
+    .hero-content {
+      padding: 32px 20px 48px;
+    }
+
+    .hero-content h2 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .hero-content .subtitle {
+      font-size: 13px;
+      margin-bottom: 28px;
+    }
+
+    .hero-content .lead {
+      font-size: 14.5px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .hero-content .brand-block {
+      margin-bottom: 28px;
+      padding: 12px 18px;
+    }
+
+    .hero-tag {
+      font-size: 18px;
+      padding: 12px 20px;
+      max-width: 88%;
+      top: 30%;
+      line-height: 1.2;
+    }
+
+    .hero-url {
+      font-size: 10px;
+      padding: 3px 8px;
+      top: 14px;
+      right: 14px;
+    }
+
+    /* FLOW MOBILE */
+    .flow {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 28px 0 24px;
+    }
+
+    .flow-step {
+      padding: 22px 20px;
+    }
+
+    .flow-step h3 {
+      font-size: 15px;
+    }
+
+    /* GRID CARDS MOBILE */
+    .grid-2 {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    /* HIGHLIGHT BOXES MOBILE */
+    .highlights {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 28px 0 24px;
+    }
+
+    .highlight-box {
+      aspect-ratio: auto;
+      padding: 24px 22px;
+    }
+
+    .highlight-box .hb-body {
+      padding: 0;
+    }
+
+    .highlight-box h4 {
+      font-size: 16px;
+    }
+
+    .highlight-box p {
+      font-size: 13px;
+    }
+
+    .card {
+      padding: 24px 22px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+    }
+
+    .flow-step h3 {
+      font-size: 16px;
+    }
+
+    /* BENEFITS MOBILE */
+    .benefits-list li {
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      padding: 18px 0;
+    }
+
+    .benefits-list h4 {
+      font-size: 15px;
+    }
+
+    .benefits-list p {
+      font-size: 13.5px;
+    }
+
+    /* PILLS MOBILE */
+    .pills {
+      gap: 6px;
+      margin-top: 24px;
+    }
+
+    .pill {
+      padding: 8px 14px;
+      font-size: 12.5px;
+    }
+
+    /* PRICING MOBILE */
+    .pricing-block {
+      padding: 26px 20px;
+      margin-top: 24px;
+    }
+
+    .price-headline {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .price-amount {
+      font-size: 9.5px;
+      padding: 5px 11px;
+    }
+
+    .price-sub {
+      font-size: 12px;
+    }
+
+    .pricing-list li {
+      font-size: 13px;
+      padding: 10px 0;
+      padding-left: 20px;
+    }
+
+    .pricing-list li::before {
+      top: 11px;
+    }
+
+    /* FEE GRID MOBILE */
+    .fee-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .fee-card {
+      padding: 24px 22px;
+    }
+
+    .fee-card .fee-label {
+      font-size: 9.5px;
+      padding: 5px 11px;
+      margin-bottom: 16px;
+    }
+
+    .fee-card .fee-value {
+      font-size: 26px;
+      margin-bottom: 4px;
+    }
+
+    .fee-card .fee-period {
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+
+    .fee-card .fee-desc {
+      font-size: 13px;
+    }
+
+    /* COMPARE TABLE MOBILE */
+    .compare-block {
+      margin-top: 36px;
+      padding: 26px 20px;
+    }
+
+    .compare-block h3 {
+      font-size: 18px;
+    }
+
+    .compare-block .compare-intro {
+      font-size: 13.5px;
+      margin-bottom: 22px;
+    }
+
+    .compare-table {
+      font-size: 12px;
+    }
+
+    .compare-table thead th {
+      padding: 11px 10px;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+    }
+
+    .compare-table tbody td {
+      padding: 12px 10px;
+    }
+
+    .compare-footnote {
+      font-size: 11.5px;
+    }
+
+    /* AUDIENCE MOBILE */
+    .audience-block {
+      margin-top: 36px;
+      padding: 26px 20px;
+    }
+
+    .audience-block h3 {
+      font-size: 18px;
+    }
+
+    .audience-block .audience-intro {
+      font-size: 13.5px;
+      margin-bottom: 22px;
+    }
+
+    .audience-pair {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .audience-card {
+      padding: 22px 20px;
+    }
+
+    .audience-tag {
+      font-size: 9.5px;
+      padding: 5px 11px;
+      margin-bottom: 14px;
+    }
+
+    .audience-card h4 {
+      font-size: 15.5px;
+    }
+
+    .audience-card p {
+      font-size: 13px;
+    }
+
+    /* PHASES MOBILE */
+    .phases-block {
+      margin-top: 36px;
+      padding: 26px 20px;
+    }
+
+    .phases-block h3 {
+      font-size: 18px;
+    }
+
+    .phases-block .phases-intro {
+      font-size: 13.5px;
+      margin-bottom: 22px;
+    }
+
+    .phases-pair {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .phase-card {
+      padding: 22px 20px;
+    }
+
+    .phase-tag {
+      font-size: 9.5px;
+      padding: 5px 11px;
+      margin-bottom: 14px;
+    }
+
+    .phase-card h4 {
+      font-size: 15.5px;
+    }
+
+    .phase-fee {
+      font-size: 18px;
+    }
+
+    .phase-fee span {
+      font-size: 12px;
+    }
+
+    .phase-desc {
+      font-size: 12.5px;
+    }
+
+    .phase-list li {
+      font-size: 12.5px;
+    }
+
+    .phases-footnote {
+      font-size: 11.5px;
+    }
+
+    /* TAX NOTE MOBILE */
+    .tax-note {
+      margin-top: 24px;
+      padding: 22px 24px;
+    }
+
+    .tax-note h3 {
+      font-size: 14.5px;
+    }
+
+    .tax-note p {
+      font-size: 13px;
+    }
+
+    /* BREAK-EVEN MOBILE */
+    .breakeven-detail {
+      margin-top: 28px;
+      padding: 26px 20px;
+    }
+
+    .breakeven-detail h3 {
+      font-size: 18px;
+    }
+
+    .breakeven-detail .breakeven-intro {
+      font-size: 13.5px;
+      margin-bottom: 22px;
+    }
+
+    .breakeven-pair {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .breakeven-card {
+      padding: 22px 20px 18px;
+    }
+
+    .breakeven-card h4 strong {
+      font-size: 14.5px;
+    }
+
+    .breakeven-table {
+      font-size: 12.5px;
+    }
+
+    .breakeven-table td {
+      padding: 10px 0;
+    }
+
+    /* IMAGE BLOCK MOBILE */
+    .image-block {
+      aspect-ratio: 16/10;
+      margin-bottom: 28px;
+    }
+
+    /* CONTATO MOBILE */
+    .contato-block {
+      padding: 36px 22px;
+      margin-top: 28px;
+    }
+
+    .contato-block h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .contato-block .contato-line {
+      font-size: 14.5px;
+    }
+
+    .contato-block .contato-line strong {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .contato-block .contato-url {
+      font-size: 11px;
+      margin-top: 24px;
+      padding-top: 20px;
+      word-break: break-all;
+    }
+
+    /* overlay quando sidebar abre */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 40;
+      display: none;
+    }
+
+    .overlay.show {
+      display: block;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page {
+      padding: 56px 16px 40px;
+    }
+
+    .hero-content {
+      padding: 28px 16px 40px;
+    }
+
+    .page-title { font-size: 24px; }
+    .hero-content h2 { font-size: 26px; }
+    .hero-tag { font-size: 16px; padding: 11px 18px; }
+  }
+
+  @media (min-width: 901px) {
+    .overlay { display: none !important; }
+  }
+
+</style>
+</head>
+<body>
+
+<button class="menu-toggle" id="menuToggle" aria-label="Menu">
+  <span></span>
+</button>
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <div class="label">Proposta</div>
+    <h1>Doble Chapa</h1>
+    <div class="sub">WTC Punta del Este<br>Zona Franca</div>
+  </div>
+
+  <div class="nav-label">Navegação</div>
+
+  <nav class="nav">
+    <button class="nav-item active" data-page="0"><span class="num">00</span>Início</button>
+    <button class="nav-item" data-page="1"><span class="num">01</span>O modelo</button>
+    <button class="nav-item" data-page="2"><span class="num">02</span>O problema</button>
+    <button class="nav-item" data-page="3"><span class="num">03</span>Como funciona</button>
+    <button class="nav-item" data-page="4"><span class="num">04</span>Por que o WTC</button>
+    <button class="nav-item" data-page="5"><span class="num">05</span>Setores</button>
+    <button class="nav-item" data-page="6"><span class="num">06</span>Benefícios</button>
+    <button class="nav-item" data-page="7"><span class="num">07</span>Proposta</button>
+    <button class="nav-item" data-page="8"><span class="num">08</span>Contato</button>
+  </nav>
+
+  <div class="sidebar-footer">
+    <strong>Doble Chapa</strong>
+    cafe@cafenarua.org<br>
+    +55 11 9 9377 3335
+  </div>
+</aside>
+
+<main class="main">
+
+  <!-- ===== PAGE 0 — HERO ===== -->
+  <section class="page hero active" data-page="0">
+    <div class="hero-image" style="background-image: url('https://carolferres.github.io/content/WTC-Punta.jpg');">
+      <div class="hero-url">https://wtcpuntadelestefreezone.com</div>
+      <div class="hero-tag">Internacionalize sua empresa pelo Uruguai</div>
+    </div>
+    <div class="hero-content">
+      <div class="brand-block">
+        <div class="wtc-logo">
+          <svg width="36" height="20" viewBox="0 0 36 20" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="8" cy="10" r="7" fill="none" stroke="white" stroke-width="1.2"/>
+            <circle cx="28" cy="10" r="7" fill="none" stroke="white" stroke-width="1.2"/>
+            <line x1="1" y1="10" x2="15" y2="10" stroke="white" stroke-width="1.2"/>
+            <line x1="21" y1="10" x2="35" y2="10" stroke="white" stroke-width="1.2"/>
+            <line x1="8" y1="3" x2="8" y2="17" stroke="white" stroke-width="1.2"/>
+            <line x1="28" y1="3" x2="28" y2="17" stroke="white" stroke-width="1.2"/>
+          </svg>
+          <div class="wtc-text">
+            WTC PUNTA DEL ESTE
+            <small>FREE ZONE</small>
+          </div>
+        </div>
+      </div>
+      <h2>Doble Chapa</h2>
+      <div class="subtitle">Estrutura internacional para empresas brasileiras<br>WTC Punta del Este — Zona Franca</div>
+      <p class="lead">Plataforma pensada para empresas brasileiras que querem expandir seus serviços para o mercado internacional com estrutura sólida e previsibilidade. Atuamos desde o WTC Punta del Este como hub comercial internacional, entidade contratual e plataforma de faturamento, organizando operações globais dentro do regime de zona franca.</p>
+    </div>
+  </section>
+
+  <!-- ===== PAGE 1 — O MODELO ===== -->
+  <section class="page" data-page="1">
+    <div class="page-num">01 — O modelo</div>
+    <h1 class="page-title">Brasil produz<br>Uruguai estrutura</h1>
+    <p class="page-lead">A Doble Chapa é uma empresa uruguaia usuária da zona franca de serviços do WTC Punta del Este. Funciona como plataforma de representação, contratação, faturamento e coordenação internacional para empresas brasileiras que querem expandir seus serviços para mercados globais.</p>
+
+    <div class="highlights">
+      <div class="highlight-box">
+        <div class="hb-num">01</div>
+        <div class="hb-tag">Natureza</div>
+        <div class="hb-body">
+          <h4>Empresa uruguaia</h4>
+          <p>Pessoa jurídica constituída no Uruguai sob o regime de zona franca de serviços do WTC Punta del Este, com benefícios fiscais permanentes garantidos pelo Estado.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-num">02</div>
+        <div class="hb-tag">Função</div>
+        <div class="hb-body">
+          <h4>Representação institucional</h4>
+          <p>Plataforma de contratação, faturamento e coordenação internacional para empresas brasileiras que exportam serviços a clientes globais.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-num">03</div>
+        <div class="hb-tag">Acesso</div>
+        <div class="hb-body">
+          <h4>Estrutura compartilhada</h4>
+          <p>Modelo desenhado para empresas com volume internacional consolidado, viabilizando acesso a infraestrutura uruguaia sem o custo de constituir operação própria.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="body">
+      <p>A empresa brasileira mantém integralmente sua operação produtiva no Brasil. A Doble Chapa, desde o Uruguai, organiza a relação com o cliente internacional: assina o contrato, emite a fatura, recebe o pagamento em moeda estrangeira, coordena a entrega e administra o relacionamento institucional.</p>
+
+      <p>O modelo permite que empresas brasileiras já consolidadas internacionalizem suas operações com <strong>ordem, previsibilidade e posicionamento institucional</strong>, sem precisar abrir filial no exterior ou mudar regime tributário.</p>
+    </div>
+  </section>
+
+  <!-- ===== PAGE 2 — O PROBLEMA ===== -->
+  <section class="page" data-page="2">
+    <div class="page-num">02 — O problema</div>
+    <h1 class="page-title">As quatro travas da internacionalização</h1>
+    <p class="page-lead">Empresas brasileiras de serviços que conseguem clientes internacionais geralmente enfrentam quatro travas simultâneas. A Doble Chapa foi desenhada para resolver as quatro de uma vez.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-num">01</div>
+        <div class="card-tag">Trava</div>
+        <h3>Jurídica</h3>
+        <p>O contrato internacional fica sob jurisdição brasileira, com tribunais lentos e moeda volátil. O cliente estrangeiro sofre para aceitar e o fechamento trava.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">02</div>
+        <div class="card-tag">Trava</div>
+        <h3>Fiscal</h3>
+        <p>A exportação de serviços do Brasil tem isenção parcial, mas IRPJ, CSLL e ISS continuam incidindo. A carga tributária efetiva sobre a receita de exportação chega facilmente a quase 20%, e a tributação nominal sobre o lucro a mais de 30%.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">03</div>
+        <div class="card-tag">Trava</div>
+        <h3>Cambial</h3>
+        <p>Receber em USD ou EUR diretamente no Brasil exige câmbio, IOF e conversão imediata em real. Não há flexibilidade para manter capital de giro internacional em moeda forte.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">04</div>
+        <div class="card-tag">Trava</div>
+        <h3>Institucional</h3>
+        <p>Uma empresa brasileira média não tem porte percebido para fechar contratos com grandes clientes internacionais. Falta marca, endereço internacional e estrutura de governança comercial.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PAGE 3 — COMO FUNCIONA ===== -->
+  <section class="page" data-page="3">
+    <div class="page-num">03 — Como funciona</div>
+    <h1 class="page-title">O fluxo em quatro movimentos</h1>
+    <p class="page-lead">O modelo opera em quatro movimentos coordenados. A empresa brasileira não precisa abrir filial no exterior, mudar regime tributário ou contratar equipe internacional própria.</p>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="step-num">01</div>
+        <div class="step-actor">Brasil</div>
+        <h3>Brasil produz</h3>
+        <p>A empresa brasileira mantém integralmente sua operação técnica, equipe e capacidade produtiva no Brasil.</p>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">02</div>
+        <div class="step-actor">Uruguai</div>
+        <h3>Uruguai estrutura</h3>
+        <p>A Doble Chapa, desde o WTC Punta del Este, organiza a representação institucional, o contrato, o faturamento e a coordenação comercial.</p>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">03</div>
+        <div class="step-actor">Cliente</div>
+        <h3>Cliente contrata</h3>
+        <p>O cliente internacional assina contrato com a Doble Chapa, sob jurisdição uruguaia, em moeda estrangeira.</p>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">04</div>
+        <div class="step-actor">Entrega</div>
+        <h3>Brasil presta</h3>
+        <p>A empresa brasileira executa o trabalho técnico em regime de back-to-back contratual com a Doble Chapa.</p>
+      </div>
+    </div>
+
+    <div class="body" style="margin-top: 40px;">
+      <p>O regime de zona franca oferece <strong>isenção de impostos nacionais, isenção de IVA, ausência de imposto sobre patrimônio e liberdade total de capital</strong>. A estabilidade é garantida pelo Estado uruguaio durante toda a vigência do contrato.</p>
+    </div>
+  </section>
+
+  <!-- ===== PAGE 4 — POR QUE O WTC ===== -->
+  <section class="page" data-page="4">
+    <div class="page-num">04 — Por que o WTC Punta del Este</div>
+    <h1 class="page-title">A primeira zona franca de serviços de Maldonado</h1>
+    <p class="page-lead">Inaugurado em dezembro de 2025, o WTC Punta del Este Free Zone é uma torre de 27 andares desenvolvida especificamente para empresas de serviços que exportam para o mundo.</p>
+
+    <div class="highlights">
+      <div class="highlight-box">
+        <div class="hb-num">01</div>
+        <div class="hb-tag">Posicionamento</div>
+        <div class="hb-body">
+          <h4>Punta del Este</h4>
+          <p>Cidade de referência internacional, com circulação de empresários, investidores e tomadores de decisão de toda a América Latina, Estados Unidos e Europa.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-num">02</div>
+        <div class="hb-tag">Estabilidade</div>
+        <div class="hb-body">
+          <h4>Uruguai</h4>
+          <p>Único país da região com classificação investment grade contínua, democracia consolidada e regime jurídico estável e previsível.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-num">03</div>
+        <div class="hb-tag">Marca</div>
+        <div class="hb-body">
+          <h4>Pertencimento</h4>
+          <p>A Doble Chapa nasce de um projeto cultural binacional Brasil-Uruguai. O WTC Punta del Este reforça essa identidade de ponte institucional entre os dois países.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="body" style="margin-top: 40px;">
+      <p><strong>Business Center no WTC Punta del Este</strong> para recepção de clientes e operações presenciais, incluindo espaços de coworking, recepção e lounge, salas de reuniões e Zoom Rooms, salas de espera e áreas comuns, além de segurança 24 horas com acesso controlado.</p>
+    </div>
+  </section>
+
+  <!-- ===== PAGE 5 — SETORES ===== -->
+  <section class="page" data-page="5">
+    <div class="page-num">05 — Setores compatíveis</div>
+    <h1 class="page-title">Para quem é</h1>
+    <p class="page-lead">O modelo se aplica a qualquer atividade enquadrada como prestação de serviços exportáveis. A empresa brasileira precisa ter capacidade produtiva instalada, portfólio comprovável e atuação consolidada em seu nicho.</p>
+
+    <div class="highlights tall">
+      <div class="highlight-box">
+        <div class="hb-num">01</div>
+        <div class="hb-tag">Pilar</div>
+        <div class="hb-body">
+          <h4>Criação &amp; comunicação</h4>
+          <ul>
+            <li>Arquitetura e design</li>
+            <li>Serviços criativos</li>
+            <li>Marketing e comunicação</li>
+            <li>Conteúdos digitais</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-num">02</div>
+        <div class="hb-tag">Pilar</div>
+        <div class="hb-body">
+          <h4>Tecnologia &amp; plataformas digitais</h4>
+          <ul>
+            <li>SaaS e software</li>
+            <li>Inteligência artificial</li>
+            <li>Fintech</li>
+            <li>Edtech</li>
+            <li>Plataformas B2B</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-num">03</div>
+        <div class="hb-tag">Pilar</div>
+        <div class="hb-body">
+          <h4>Consultoria &amp; engenharia</h4>
+          <ul>
+            <li>Consultoria profissional</li>
+            <li>Advisory técnico</li>
+            <li>Engenharia</li>
+            <li>ESG e sustentabilidade</li>
+            <li>Serviços empresariais especializados</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PAGE 6 — BENEFÍCIOS ===== -->
+  <section class="page" data-page="6">
+    <div class="page-num">06 — Benefícios</div>
+    <h1 class="page-title">O que a sua empresa ganha</h1>
+    <p class="page-lead">Sua empresa mantém a operação produtiva no Brasil, enquanto a estrutura contratual, comercial e financeira é organizada pelo Uruguai.</p>
+
+    <div class="highlights">
+      <div class="highlight-box">
+        <div class="hb-num">01</div>
+        <div class="hb-tag">Acesso</div>
+        <div class="hb-body">
+          <h4>Interface comercial internacional</h4>
+          <p>Porta de entrada institucional em zona franca reconhecida, com identidade uruguaia e contratação em moeda forte. Receita estabilizada em USD ou EUR, sem exposição direta à volatilidade do real.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-num">02</div>
+        <div class="hb-tag">Jurisdição</div>
+        <div class="hb-body">
+          <h4>Contratos estáveis</h4>
+          <p>Cliente internacional assina em jurisdição uruguaia, com previsibilidade jurídica e regime tributário garantido pelo Estado.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-num">03</div>
+        <div class="hb-tag">Câmbio</div>
+        <div class="hb-body">
+          <h4>Pagamentos sem fricção</h4>
+          <p>Faturamento e recebimento em moeda estrangeira diretamente no Uruguai, sem IOF nem conversão obrigatória em real. A maior economia vem da isenção de IRPJ, CSLL e ISS dentro da zona franca, não apenas do câmbio.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-num">04</div>
+        <div class="hb-tag">Estrutura</div>
+        <div class="hb-body">
+          <h4>Operação terceirizada</h4>
+          <p>Endereço, governança e gestão comercial internacional sem necessidade de abrir filial ou contratar equipe própria no exterior.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-num">05</div>
+        <div class="hb-tag">Porte</div>
+        <div class="hb-body">
+          <h4>Selo institucional</h4>
+          <p>O WTC e o regime de zona franca uruguaio mudam a percepção de porte da empresa brasileira frente a clientes internacionais.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-num">06</div>
+        <div class="hb-tag">Escala</div>
+        <div class="hb-body">
+          <h4>Crescimento sem fricção</h4>
+          <p>À medida que a empresa brasileira cresce, a estrutura uruguaia escala junto sem aumento proporcional de complexidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PAGE 7 — PROPOSTA ===== -->
+  <section class="page" data-page="7">
+    <div class="page-num">07 — Proposta</div>
+    <h1 class="page-title">Estrutura de remuneração</h1>
+    <p class="page-lead">A remuneração da Doble Chapa combina uma taxa mensal fixa, que cobre a estrutura operacional no Uruguai, e uma comissão variável sobre a receita intermediada com clientes internacionais. A taxa fixa começa desde a fase de inserção; a comissão variável incide apenas quando há receita sendo intermediada. O portfólio é curado e limitado, o que garante atenção dedicada a cada empresa representada.</p>
+
+    <div class="fee-grid">
+      <div class="fee-card">
+        <div class="fee-label">Taxa mensal fixa</div>
+        <div class="fee-value">USD 5.000</div>
+        <div class="fee-period">por mês, por empresa representada</div>
+        <p class="fee-desc">Cobre a estrutura legal e contábil da empresa uruguaia, business center no WTC Punta del Este, governança contratual, gestão cambial, suporte administrativo e representação institucional contínua.</p>
+      </div>
+
+      <div class="fee-card">
+        <div class="fee-label">Comissão variável</div>
+        <div class="fee-value">5%</div>
+        <div class="fee-period">sobre a receita bruta intermediada</div>
+        <p class="fee-desc">Aplicada sobre o valor faturado pela Doble Chapa frente ao cliente internacional, calculada e repassada mensalmente. Incide sobre a receita bruta, sem ajustes contábeis ou auditoria cruzada da operação brasileira.</p>
+      </div>
+    </div>
+
+    <div class="pricing-block">
+      <div class="price-headline">
+        <div class="price-amount">O que está incluído</div>
+      </div>
+
+      <ul class="pricing-list">
+        <li>Representação comercial internacional sob a estrutura da empresa uruguaia</li>
+        <li>Uso da infraestrutura jurídica e contratual da zona franca</li>
+        <li>Emissão e gestão de contratos com clientes internacionais</li>
+        <li>Faturamento internacional organizado pela empresa uruguaia</li>
+        <li>Coordenação administrativa das operações entre cliente e empresa brasileira</li>
+        <li>Gestão comercial institucional no exterior</li>
+        <li>Interface com clientes internacionais</li>
+        <li>Administração contratual contínua</li>
+        <li>Governança básica de projetos</li>
+        <li>Curadoria e posicionamento institucional dentro do portfólio representado</li>
+      </ul>
+    </div>
+
+    <div class="phases-block">
+      <h3>Como o serviço se desenvolve</h3>
+      <p class="phases-intro">A relação com a Doble Chapa acontece em duas fases. A taxa mensal fixa começa desde o início, na fase de inserção, quando o trabalho mais intenso de entrada no mercado é realizado. A comissão variável só passa a incidir quando há receita internacional sendo intermediada.</p>
+
+      <div class="phases-pair">
+        <div class="phase-card">
+          <div class="phase-tag">Fase 1</div>
+          <h4>Inserção e ativação</h4>
+          <div class="phase-fee">USD 5.000 / mês</div>
+          <p class="phase-desc">Período inicial de entrada no mercado, conduzido ativamente pela Doble Chapa, com a estrutura uruguaia já constituída e disponível.</p>
+          <ul class="phase-list">
+            <li>Diagnóstico estratégico do mercado e do posicionamento da empresa</li>
+            <li>Construção da presença institucional local em Punta del Este</li>
+            <li>Montagem de rede qualificada de contatos e parcerias</li>
+            <li>Estruturação do pipeline de oportunidades</li>
+            <li>Apoio ativo na condução até o primeiro contrato internacional</li>
+          </ul>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-tag">Fase 2</div>
+          <h4>Operação recorrente</h4>
+          <div class="phase-fee">USD 5.000 / mês <span>+ 5% sobre a receita</span></div>
+          <p class="phase-desc">A partir do primeiro contrato fechado, a estrutura passa a operar plenamente e a comissão variável entra em vigor sobre a receita intermediada.</p>
+          <ul class="phase-list">
+            <li>Faturamento internacional ativo pela empresa uruguaia</li>
+            <li>Gestão cambial e governança contratual em operação</li>
+            <li>Manutenção da rede e geração contínua de novas oportunidades</li>
+            <li>Administração das operações entre cliente e empresa brasileira</li>
+            <li>Representação institucional permanente no exterior</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="phases-footnote">A taxa da fase de inserção remunera o trabalho ativo de entrada no mercado e os entregáveis correspondentes, não um resultado garantido. O tempo até o primeiro contrato varia conforme o setor, a maturidade internacional da empresa e o ritmo de cada mercado.</p>
+    </div>
+
+    <div class="audience-block">
+      <h3>Para quem o modelo é desenhado</h3>
+      <p class="audience-intro">A Doble Chapa atende empresas brasileiras de serviços que precisam operar internacionalmente com estrutura institucional, mas para as quais montar uma operação própria no exterior não faz sentido econômico ou estratégico.</p>
+
+      <div class="audience-pair">
+        <div class="audience-card">
+          <div class="audience-tag">Perfil 1</div>
+          <h4>Começando a exportar</h4>
+          <p>Empresa com capacidade técnica e portfólio consolidado, conquistando os primeiros clientes internacionais ou prestes a conquistar. Não tem estrutura jurídica no exterior e não quer construir uma do zero. Quer começar certo, com posicionamento institucional desde o primeiro contrato internacional.</p>
+        </div>
+
+        <div class="audience-card">
+          <div class="audience-tag">Perfil 2</div>
+          <h4>Profissionalizando exportação existente</h4>
+          <p>Empresa que já presta serviços para clientes internacionais, mas o faz pelo CNPJ brasileiro, sem estrutura adequada. Receberia melhor em moeda forte, fecharia contratos maiores com jurisdição internacional, mas não tem tempo nem conhecimento para reestruturar sozinha.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="compare-block">
+      <h3>A comparação que importa</h3>
+      <p class="compare-intro">Para uma empresa que decide operar internacionalmente com estrutura institucional no WTC Punta del Este Free Zone, a alternativa real à Doble Chapa não é continuar exportando pelo Brasil, e sim montar a própria operação na zona franca. A comparação relevante é entre esses dois caminhos.</p>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Estrutura própria no exterior</th>
+            <th>Via Doble Chapa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Constituição de pessoa jurídica</td>
+            <td>USD 8.000 a 10.000</td>
+            <td>incluído</td>
+          </tr>
+          <tr>
+            <td>Advocacia internacional para setup</td>
+            <td>USD 12.000 a 20.000</td>
+            <td>incluído</td>
+          </tr>
+          <tr>
+            <td>Contabilidade internacional</td>
+            <td>USD 800 a 2.000 / mês</td>
+            <td>incluído</td>
+          </tr>
+          <tr>
+            <td>Endereço corporativo no WTC ou equivalente</td>
+            <td>USD 2.000 a 4.000 / mês</td>
+            <td>incluído</td>
+          </tr>
+          <tr>
+            <td>Tempo até estar operacional</td>
+            <td>6 a 12 meses</td>
+            <td>imediato</td>
+          </tr>
+          <tr>
+            <td>Custo total no primeiro ano</td>
+            <td>USD 55.000 a 100.000+ entre setup e mensalidades</td>
+            <td>USD 60.000 fixo + 5% sobre receita</td>
+          </tr>
+          <tr>
+            <td>Custo recorrente do segundo ano em diante</td>
+            <td>USD 33.000 a 72.000 / ano em mensalidades</td>
+            <td>USD 60.000 fixo + 5% sobre receita</td>
+          </tr>
+          <tr>
+            <td>Risco jurídico, contábil e operacional</td>
+            <td>integralmente da empresa</td>
+            <td>absorvido pela plataforma</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="compare-footnote">A diferença não é apenas de custo. Estruturar uma operação própria no exterior exige conhecimento jurídico internacional, gestão contábil em duas jurisdições, contratação de prestadores locais e absorção integral do risco regulatório. Mesmo após o setup pago, as mensalidades recorrentes da estrutura própria continuam exigindo gestão direta, enquanto a Doble Chapa entrega tudo isso já integrado, com previsibilidade de custo e responsabilidade operacional absorvida pela plataforma.</p>
+    </div>
+
+    <div class="tax-note">
+      <h3>Sobre a economia tributária</h3>
+      <p>A estrutura uruguaia também gera vantagens tributárias, mas o valor exato depende de variáveis específicas de cada operação: o tipo de serviço exportado e seu enquadramento na legislação brasileira de exportação, o regime tributário da empresa brasileira (lucro real ou presumido), a margem operacional e a forma como o capital retorna ou é reinvestido. Em algumas configurações, o capital pode permanecer no Uruguai para reinvestimento internacional, sem retorno imediato ao Brasil e sem a tributação correspondente. A simulação tributária aplicada ao caso específico da sua empresa faz parte do diagnóstico inicial, conduzido em conjunto com o contador da operação brasileira.</p>
+    </div>
+  </section>
+
+  <!-- ===== PAGE 8 — CONTATO ===== -->
+  <section class="page" data-page="8">
+    <div class="page-num">08 — Contato</div>
+    <h1 class="page-title">Vamos conversar</h1>
+    <p class="page-lead">Para entender se o modelo se aplica ao seu caso, fazer uma simulação tributária ou iniciar um diagnóstico de internacionalização.</p>
+
+    <div class="contato-block">
+      <h3>Doble Chapa</h3>
+      <div class="contato-line"><strong>E-mail</strong>cafe@cafenarua.org</div>
+      <div class="contato-line"><strong>Telefone</strong>+55 11 9 9377 3335</div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  const navItems = document.querySelectorAll('.nav-item');
+  const pages = document.querySelectorAll('.page');
+  const menuToggle = document.getElementById('menuToggle');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+
+  function showPage(idx) {
+    pages.forEach(p => p.classList.remove('active'));
+    navItems.forEach(n => n.classList.remove('active'));
+    const targetPage = document.querySelector(`.page[data-page="${idx}"]`);
+    const targetNav = document.querySelector(`.nav-item[data-page="${idx}"]`);
+    if (targetPage) targetPage.classList.add('active');
+    if (targetNav) targetNav.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const idx = item.dataset.page;
+      showPage(idx);
+      // fecha sidebar no mobile depois de clicar
+      if (window.innerWidth <= 900) {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        menuToggle.classList.remove('open');
+      }
+    });
+  });
+
+  menuToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('show');
+    menuToggle.classList.toggle('open');
+  });
+
+  overlay.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('show');
+    menuToggle.classList.remove('open');
+  });
+</script>
+
+</body>
+</html>
