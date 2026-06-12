@@ -123,21 +123,19 @@
   .lang-toggle button:hover:not(.active) { background: rgba(36,31,27,0.06); }
 
   /* ====== HERO (foto no fundo) ====== */
-  .hero {
-    position: relative; min-height: 62vh; display: flex; align-items: flex-end;
-    overflow: hidden;
-  }
-  .hero-bg {
-    position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; object-position: 50% 70%;
-  }
+  .hero { position: relative; overflow: hidden; }
+  .hero-bg { position: relative; display: block; width: 100%; height: auto; z-index: 0; }
   .hero-scrim {
-    position: absolute; inset: 0;
+    position: absolute; inset: 0; z-index: 1;
     background: linear-gradient(to top,
-      rgba(22,18,15,0.88) 0%, rgba(22,18,15,0.6) 38%,
-      rgba(22,18,15,0.5) 70%, rgba(22,18,15,0.52) 100%);
+      rgba(20,16,13,0.82) 0%, rgba(20,16,13,0.5) 28%,
+      rgba(20,16,13,0.14) 58%, rgba(20,16,13,0) 100%);
   }
-  .hero-inner { position: relative; z-index: 2; width: 100%; padding: 130px 0 64px; }
+  .hero-inner {
+    position: absolute; inset: 0; z-index: 2;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding-top: 90px; padding-bottom: 54px;
+  }
   .hero-text { max-width: 800px; color: #fff; }
   .hero .eyebrow { color: var(--amarelo-luz); }
   .hero h1 {
@@ -277,8 +275,7 @@
     .section-nav { display: none; }
     .casa-grid, .chapa-grid, .ide-grid, .convite-grid { grid-template-columns: 1fr; gap: 36px; }
     .eco-grid { grid-template-columns: 1fr; }
-    .hero { min-height: 56vh; }
-    .hero-inner { padding: 92px 0 40px; }
+    .hero-inner { padding-top: 32px; padding-bottom: 26px; }
     section.block { padding: 60px 0; }
   }
   @media (max-width: 480px) {
@@ -292,6 +289,15 @@
     html { scroll-behavior: auto; }
   }
   @media (max-width: 880px) { body { background-attachment: scroll; } }
+  @media (max-width: 620px) {
+    .hero-scrim { display: none; }
+    .hero-inner { position: static; padding: 20px 0 4px; }
+    .hero-text { color: var(--tinta); }
+    .hero .eyebrow { color: #356b69; }
+    .hero h1 { color: var(--tinta); }
+    .hero-lead { color: var(--tinta-soft); }
+    .hero-lead strong { color: var(--tinta); }
+  }
 </style>
 </head>
 
@@ -327,10 +333,6 @@
   <div class="hero-scrim"></div>
   <div class="container hero-inner">
     <div class="hero-text reveal">
-      <div class="eyebrow">
-        <span data-lang-pt>Casa cultural brasileira · José Ignacio · Uruguai</span>
-        <span data-lang-es>Casa cultural brasileña · José Ignacio · Uruguay</span>
-      </div>
       <h1>
         <span data-lang-pt>O coração do Brasil<br>no coração de José Ignacio</span>
         <span data-lang-es>El corazón de Brasil<br>en el corazón de José Ignacio</span>
