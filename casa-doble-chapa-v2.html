@@ -124,25 +124,24 @@
 
   /* ====== HERO (foto no fundo) ====== */
   .hero { position: relative; overflow: hidden; }
-  .hero-bg { position: relative; display: block; width: 100%; height: auto; z-index: 0; }
+  .hero-bg { position: relative; display: block; width: 100%; height: auto; z-index: 0; filter: brightness(0.72); }
   .hero-scrim {
     position: absolute; inset: 0; z-index: 1;
-    background: linear-gradient(to top,
-      rgba(20,16,13,0.82) 0%, rgba(20,16,13,0.5) 28%,
-      rgba(20,16,13,0.14) 58%, rgba(20,16,13,0) 100%);
+    background: linear-gradient(to bottom left,
+      rgba(8,6,5,0.3) 0%, rgba(8,6,5,0.1) 46%, rgba(8,6,5,0) 74%);
   }
   .hero-inner {
     position: absolute; inset: 0; z-index: 2;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding-top: 90px; padding-bottom: 54px;
+    display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-end;
+    padding-top: 58px; padding-bottom: 54px;
   }
-  .hero-text { max-width: 800px; color: #fff; }
+  .hero-text { max-width: 760px; color: #fff; text-align: right; }
   .hero .eyebrow { color: var(--amarelo-luz); }
   .hero h1 {
-    color: #fff; font-size: clamp(2.1rem, 4.4vw, 3.6rem); font-weight: 700;
-    line-height: 1.06; margin: 16px 0 22px;
+    color: #fff; font-size: clamp(1.7rem, 3vw, 2.6rem); font-weight: 700;
+    line-height: 1.08; margin: 0 0 22px; white-space: nowrap;
   }
-  .hero-lead { font-size: clamp(1.1rem, 1.7vw, 1.28rem); line-height: 1.5; max-width: 34em; color: rgba(255,255,255,0.94); }
+  .hero-lead { font-size: clamp(0.95rem, 1.4vw, 1.08rem); line-height: 1.5; max-width: 34em; color: rgba(255,255,255,0.94); }
   .hero-lead strong { color: #fff; font-weight: 700; }
   .hero-note {
     font-family: 'Caveat', cursive; font-size: 1.5rem; color: var(--amarelo-luz);
@@ -291,8 +290,8 @@
   @media (max-width: 880px) { body { background-attachment: scroll; } }
   @media (max-width: 620px) {
     .hero-scrim { display: none; }
-    .hero-inner { position: static; padding: 20px 0 4px; }
-    .hero-text { color: var(--tinta); }
+    .hero-inner { position: static; align-items: stretch; padding: 20px 0 4px; }
+    .hero-text { color: var(--tinta); text-align: left; max-width: none; }
     .hero .eyebrow { color: #356b69; }
     .hero h1 { color: var(--tinta); }
     .hero-lead { color: var(--tinta-soft); }
