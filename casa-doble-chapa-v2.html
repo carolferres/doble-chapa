@@ -79,9 +79,9 @@
 
   .eyebrow {
     font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
-    font-weight: 700; color: var(--amarelo-funda);
+    font-weight: 700; color: #356b69;
   }
-  .eyebrow.verde { color: var(--verde-funda); }
+  .eyebrow.verde { color: #356b69; }
 
   /* ====== LANG TOGGLE ====== */
   [data-lang-pt], [data-lang-es] { display: none; }
@@ -124,12 +124,12 @@
 
   /* ====== HERO (foto no fundo) ====== */
   .hero {
-    position: relative; min-height: 88vh; display: flex; align-items: flex-end;
+    position: relative; min-height: 62vh; display: flex; align-items: flex-end;
     overflow: hidden;
   }
   .hero-bg {
     position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; object-position: 50% 42%;
+    object-fit: cover; object-position: 50% 70%;
   }
   .hero-scrim {
     position: absolute; inset: 0;
@@ -152,7 +152,7 @@
   }
 
   /* ====== STRIP ====== */
-  .strip { background: #141414; color: var(--cal); overflow: hidden; padding: 13px 0; }
+  .strip { background: #314b4a; color: var(--cal); overflow: hidden; padding: 13px 0; }
   .strip-track { display: flex; gap: 0; white-space: nowrap; animation: marquee 32s linear infinite; }
   .strip-track span {
     font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600;
@@ -277,8 +277,8 @@
     .section-nav { display: none; }
     .casa-grid, .chapa-grid, .ide-grid, .convite-grid { grid-template-columns: 1fr; gap: 36px; }
     .eco-grid { grid-template-columns: 1fr; }
-    .hero { min-height: 78vh; }
-    .hero-inner { padding: 110px 0 44px; }
+    .hero { min-height: 56vh; }
+    .hero-inner { padding: 92px 0 40px; }
     section.block { padding: 60px 0; }
   }
   @media (max-width: 480px) {
@@ -323,7 +323,7 @@
 
 <!-- ============== HERO (foto no fundo) ============== -->
 <section class="hero">
-  <img class="hero-bg" src="https://carolferres.github.io/content/CasitaDC-Final-1.jpg" alt="Cozinha aberta da Casa Doble Chapa em José Ignacio – madeira, plantas e a lousa com o menu da semana"/>
+  <img class="hero-bg" src="https://carolferres.github.io/content/CasitaDC-Final-3.jpg" alt="Cozinha aberta da Casa Doble Chapa em José Ignacio – madeira, plantas e a lousa com o menu da semana"/>
   <div class="hero-scrim"></div>
   <div class="container hero-inner">
     <div class="hero-text reveal">
@@ -348,10 +348,10 @@
 <!-- ============== STRIP ============== -->
 <div class="strip" aria-hidden="true">
   <div class="strip-track">
-    <span data-lang-pt>Cinema</span><span data-lang-pt>Literatura</span><span data-lang-pt>Culturas originárias</span><span data-lang-pt>Cozinha</span><span data-lang-pt>José Ignacio</span><span data-lang-pt>Brasil–Uruguai</span>
-    <span data-lang-pt>Cinema</span><span data-lang-pt>Literatura</span><span data-lang-pt>Culturas originárias</span><span data-lang-pt>Cozinha</span><span data-lang-pt>José Ignacio</span><span data-lang-pt>Brasil–Uruguai</span>
-    <span data-lang-es>Cine</span><span data-lang-es>Literatura</span><span data-lang-es>Culturas originarias</span><span data-lang-es>Cocina</span><span data-lang-es>José Ignacio</span><span data-lang-es>Brasil–Uruguay</span>
-    <span data-lang-es>Cine</span><span data-lang-es>Literatura</span><span data-lang-es>Culturas originarias</span><span data-lang-es>Cocina</span><span data-lang-es>José Ignacio</span><span data-lang-es>Brasil–Uruguay</span>
+    <span data-lang-pt>Cinema</span><span data-lang-pt>Literatura</span><span data-lang-pt>Cultura</span><span data-lang-pt>Cozinha</span><span data-lang-pt>José Ignacio</span><span data-lang-pt>Brasil–Uruguai</span>
+    <span data-lang-pt>Cinema</span><span data-lang-pt>Literatura</span><span data-lang-pt>Cultura</span><span data-lang-pt>Cozinha</span><span data-lang-pt>José Ignacio</span><span data-lang-pt>Brasil–Uruguai</span>
+    <span data-lang-es>Cine</span><span data-lang-es>Literatura</span><span data-lang-es>Cultura</span><span data-lang-es>Cocina</span><span data-lang-es>José Ignacio</span><span data-lang-es>Brasil–Uruguay</span>
+    <span data-lang-es>Cine</span><span data-lang-es>Literatura</span><span data-lang-es>Cultura</span><span data-lang-es>Cocina</span><span data-lang-es>José Ignacio</span><span data-lang-es>Brasil–Uruguay</span>
   </div>
 </div>
 
@@ -466,8 +466,8 @@
         <!-- Culturas originárias -->
         <div class="course">
           <div class="course-head">
-            <span class="course-name" data-lang-pt>Culturas originárias</span>
-            <span class="course-name" data-lang-es>Culturas originarias</span>
+            <span class="course-name" data-lang-pt>Cultura</span>
+            <span class="course-name" data-lang-es>Cultura</span>
             <span class="course-dots"></span>
           </div>
           <p data-lang-pt>
