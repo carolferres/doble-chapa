@@ -26,7 +26,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -73,13 +73,13 @@
   ::selection { background: var(--amarelo); color: var(--tinta); }
 
   /* ====== TIPOGRAFIA (sem serifa) ====== */
-  h1, h2, h3, h4 { font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; line-height: 1.04; letter-spacing: -0.02em; }
+  h1, h2, h3, h4 { color: var(--tinta); font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; line-height: 1.04; letter-spacing: -0.02em; }
   h1 em, h2 em, h3 em, h4 em { font-style: normal; }
   .chalk-font { font-family: 'Caveat', cursive; }
 
   .eyebrow {
     font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
-    font-weight: 700; color: #356b69;
+    font-weight: 700; color: #356b69; margin-bottom: 10px; display: block;
   }
   .eyebrow.verde { color: #356b69; }
 
@@ -100,8 +100,10 @@
   }
   .topbar-inner {
     max-width: 1180px; margin: 0 auto; padding: 13px 40px;
-    display: flex; justify-content: space-between; align-items: center; gap: 20px;
+    display: flex; justify-content: flex-end; align-items: center; gap: 20px;
   }
+  .topbar-inner > * { flex-shrink: 0; }
+  .topbar-half { display: flex; justify-content: space-between; align-items: center; gap: 20px; width: 100%; }
   .brand { display: flex; align-items: center; gap: 11px; }
   .brand .name { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; white-space: nowrap; }
   .seal { display: flex; gap: 3px; }
@@ -110,7 +112,7 @@
   .section-nav { display: flex; gap: 18px; }
   .section-nav a {
     font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
-    color: var(--tinta-soft); text-decoration: none; opacity: 0.7; transition: opacity .2s, color .2s;
+    color: var(--tinta); text-decoration: none; opacity: 0.7; transition: opacity .2s, color .2s;
   }
   .section-nav a:hover { opacity: 1; color: var(--amarelo-funda); }
 
@@ -124,24 +126,31 @@
 
   /* ====== HERO (foto no fundo) ====== */
   .hero { position: relative; overflow: hidden; }
-  .hero-bg { position: relative; display: block; width: 100%; height: auto; z-index: 0; filter: brightness(0.72); }
+  .hero-bg { position: relative; display: block; width: 100%; height: auto; z-index: 0; filter: brightness(0.95); }
   .hero-scrim {
     position: absolute; inset: 0; z-index: 1;
     background: linear-gradient(to bottom left,
-      rgba(8,6,5,0.3) 0%, rgba(8,6,5,0.1) 46%, rgba(8,6,5,0) 74%);
+      rgba(8,6,5,0.1) 0%, rgba(8,6,5,0.03) 40%, rgba(8,6,5,0) 70%);
   }
   .hero-inner {
     position: absolute; inset: 0; z-index: 2;
     display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-end;
-    padding-top: 58px; padding-bottom: 54px;
+    padding-top: 78px; padding-bottom: 54px;
   }
   .hero-text { max-width: 760px; color: #fff; text-align: right; }
   .hero .eyebrow { color: var(--amarelo-luz); }
   .hero h1 {
-    color: #fff; font-size: clamp(1.7rem, 3vw, 2.6rem); font-weight: 700;
-    line-height: 1.08; margin: 0 0 22px; white-space: nowrap;
+    font-family: 'Fraunces', Georgia, serif;
+    color: #7fa8a9; font-size: clamp(1rem, 2vw, 1.5rem); font-weight: 500;
+    line-height: 1.2; letter-spacing: 0; margin: 0 0 20px; white-space: nowrap;
+    display: inline-block; background: #1d1d1f; position: relative;
+    padding: 9px 20px 11px 26px;
   }
-  .hero-lead { font-size: clamp(0.95rem, 1.4vw, 1.08rem); line-height: 1.5; max-width: 34em; color: rgba(255,255,255,0.94); }
+  .hero h1::after {
+    content: ""; position: absolute; top: 0; bottom: 0; left: 100%;
+    width: 100vw; background: #1d1d1f;
+  }
+  .hero-lead { font-size: clamp(0.95rem, 1.4vw, 1.08rem); line-height: 1.5; max-width: 34em; color: rgba(255,255,255,0.94); text-shadow: 0 1px 10px rgba(0,0,0,0.65); }
   .hero-lead strong { color: #fff; font-weight: 700; }
   .hero-note {
     font-family: 'Caveat', cursive; font-size: 1.5rem; color: var(--amarelo-luz);
@@ -149,7 +158,7 @@
   }
 
   /* ====== STRIP ====== */
-  .strip { background: #314b4a; color: var(--cal); overflow: hidden; padding: 13px 0; }
+  .strip { background: #1d1d1f; color: #7fa8a9; overflow: hidden; padding: 13px 0; }
   .strip-track { display: flex; gap: 0; white-space: nowrap; animation: marquee 32s linear infinite; }
   .strip-track span {
     font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600;
@@ -158,26 +167,35 @@
   .strip-track span::after { content: "◆"; margin-left: 26px; opacity: 0.45; }
   @keyframes marquee { to { transform: translateX(-50%); } }
 
+
+  h2 { margin-bottom: 22px; }
+  /* ====== CORPO GLOBAL ====== */
+  .body p, .chapa-sec .body p, .ide-text p, .convite .body p, .eco-intro { font-size: 1.08rem; max-width: 28em; }
   /* ====== SECTION BASE ====== */
   section.block { padding: 86px 0; }
-  .label { margin-bottom: 26px; }
+  section.cardapio { padding: 60px 0; }
+  .label { margin-bottom: 10px; }
 
 
   /* ====== A CASA ====== */
   .casa-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: start; }
-  .casa h2 { font-size: clamp(2rem, 3.8vw, 3rem); }
-  .casa .body p { margin-top: 1.1em; color: var(--tinta-soft); }
+  .casa h2 { font-size: clamp(2.2rem, 3vw, 2.5rem); font-family: 'Fraunces', Georgia, serif; font-weight: 500; color: var(--tinta); }
+  .casa .body p { margin-top: 1em; color: var(--tinta); font-size: 1.08rem; max-width: 28em; }
   .casa .body p strong { color: var(--tinta); font-weight: 700; }
-  .casa .body p.first { font-size: 1.18rem; color: var(--tinta); margin-top: 0; }
+  .casa .body p.first { font-size: 1.08rem; color: var(--tinta); margin-top: 0; max-width: 28em; }
 
   /* ====== CARDÁPIO – assinatura (lousa) ====== */
-  .cardapio-intro { max-width: 44em; margin-bottom: 40px; }
-  .cardapio-intro h2 { font-size: clamp(2.1rem, 4vw, 3.2rem); margin: 14px 0 18px; }
-  .cardapio-intro p { color: var(--tinta-soft); font-size: 1.08rem; }
+  .cardapio-intro { margin-bottom: 40px; }
+  .cardapio-intro h2 { font-size: clamp(2.2rem, 3vw, 2.5rem); font-family: 'Fraunces', Georgia, serif; font-weight: 500; margin-top: 10px; }
+  .cardapio-intro p { color: var(--tinta); font-size: 1.08rem; }
+
+  .board-wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; }
+  .board-wrap .board { grid-column: 2; }
+  .board-wrap .cardapio-intro { grid-column: 1; margin-bottom: 0; align-self: center; }
 
   .board {
     background: var(--board); color: var(--chalk);
-    border-radius: 5px; padding: 50px clamp(28px, 5vw, 64px);
+    border-radius: 5px; padding: 28px clamp(22px, 4vw, 44px);
     box-shadow: 0 30px 70px -34px rgba(36,31,27,0.55), inset 0 0 0 1px rgba(239,233,221,0.1), inset 0 0 0 8px rgba(239,233,221,0.05);
     position: relative;
   }
@@ -198,7 +216,7 @@
     color: var(--board); background: #e6c24a; padding: 4px 9px; border-radius: 3px; transform: translateY(-3px);
   }
   .course-dots { flex: 1; border-bottom: 1.5px dotted rgba(239,233,221,0.3); transform: translateY(-5px); min-width: 30px; }
-  .course p { margin-top: 8px; opacity: 0.86; font-size: 1.02rem; max-width: 52em; }
+  .course p { margin-top: 8px; opacity: 0.86; font-size: 0.95rem; max-width: 52em; }
 
   .cinema-cycle { display: flex; flex-wrap: wrap; gap: 10px 8px; margin-top: 16px; }
   .cycle-step {
@@ -212,8 +230,8 @@
   /* ====== DOBLE CHAPA ====== */
   .chapa-sec { background: transparent; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
   .chapa-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
-  .chapa-sec h2 { font-size: clamp(2rem, 3.8vw, 2.9rem); margin: 12px 0 22px; }
-  .chapa-sec .body p { margin-top: 1.05em; color: var(--tinta-soft); }
+  .chapa-sec h2 { font-size: clamp(2.2rem, 3vw, 2.5rem); font-family: 'Fraunces', Georgia, serif; font-weight: 500; }
+  .chapa-sec .body p { margin-top: 1.05em; color: var(--tinta); }
   .chapa-sec .body p:first-child { margin-top: 0; }
   .chapa-sec .body strong { color: var(--amarelo-funda); font-weight: 700; }
   .placeholder {
@@ -224,15 +242,15 @@
   .placeholder span { font-family: 'Caveat', cursive; font-size: 1.25rem; color: #8a8a8a; }
 
   /* ====== ECOSSISTEMA ====== */
-  .eco h2 { font-size: clamp(2rem, 3.8vw, 3rem); }
-  .eco-intro { max-width: 42em; color: var(--tinta-soft); margin: 14px 0 44px; font-size: 1.08rem; }
+  .eco h2 { font-size: clamp(2.2rem, 3vw, 2.5rem); font-family: 'Fraunces', Georgia, serif; font-weight: 500; }
+  .eco-intro { max-width: 42em; color: var(--tinta); margin: 14px 0 44px; font-size: 1.08rem; }
   .eco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
   .eco-card { border: 1px solid var(--rule-strong); border-radius: 4px; padding: 26px 24px; background: var(--cal); }
   .eco-card .when { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--amarelo-funda); }
   .eco-card.uy .when { color: var(--verde-funda); }
   .eco-card h3 { font-size: 1.5rem; margin: 8px 0 4px; }
   .eco-card .meta { font-size: 0.82rem; color: var(--madeira-funda); font-weight: 600; margin-bottom: 12px; }
-  .eco-card p { font-size: 0.96rem; color: var(--tinta-soft); }
+  .eco-card p { font-size: 0.96rem; color: var(--tinta); }
   .eco-card.casa-self { background: var(--amarelo); color: var(--tinta); border-color: var(--amarelo); }
   .eco-card.casa-self .when, .eco-card.casa-self .meta { color: rgba(36,31,27,0.66); }
   .eco-card.casa-self p { color: rgba(36,31,27,0.84); }
@@ -240,19 +258,19 @@
   /* ====== IDEALIZADORA (claro) ====== */
   .ide { background: transparent; border-top: 1px solid var(--rule); }
   .ide-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 56px; align-items: start; }
-  .ide h2 { font-size: clamp(2.4rem, 4.5vw, 3.4rem); }
+  .ide h2 { font-size: clamp(2.2rem, 3vw, 2.5rem); font-family: 'Fraunces', Georgia, serif; font-weight: 500; }
   .ide .role { font-family: 'Caveat', cursive; font-size: 1.7rem; color: var(--amarelo); margin-top: 8px; }
   .ide .kv { margin-top: 26px; display: grid; grid-template-columns: auto 1fr; gap: 8px 18px; font-size: 0.92rem; }
   .ide .kv dt { font-weight: 700; letter-spacing: 0.06em; color: var(--verde-funda); }
-  .ide .kv dd { color: var(--tinta-soft); }
-  .ide-text p { margin-top: 1.1em; color: var(--tinta-soft); }
-  .ide-text p:first-child { margin-top: 0; font-size: 1.15rem; color: var(--tinta); }
+  .ide .kv dd { color: var(--tinta); }
+  .ide-text p { margin-top: 1em; color: var(--tinta); font-size: 1.08rem; max-width: 28em; }
+  .ide-text p:first-child { margin-top: 0; font-size: 1.08rem; color: var(--tinta); }
 
   /* ====== CONVITE ====== */
   .convite-grid { display: grid; grid-template-columns: 1fr 0.9fr; gap: 56px; align-items: center; }
-  .convite h2 { font-size: clamp(2.4rem, 5vw, 3.8rem); margin: 12px 0 18px; }
-  .convite h2 .accent { color: var(--amarelo); }
-  .convite .body p { color: var(--tinta-soft); font-size: 1.1rem; max-width: 30em; }
+  .convite h2 { font-size: clamp(2.2rem, 3vw, 2.5rem); font-family: 'Fraunces', Georgia, serif; font-weight: 500; }
+  .convite h2 .accent { color: var(--tinta); }
+  .convite .body p { color: var(--tinta); font-size: 1.1rem; max-width: 30em; }
   .contato-info { display: grid; gap: 18px; }
   .contato-item .tag { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--verde-funda); margin-bottom: 3px; }
   .contato-item a, .contato-item .val { font-size: 1.2rem; font-weight: 600; color: var(--tinta); text-decoration: none; }
@@ -270,6 +288,9 @@
 
   /* ====== RESPONSIVO ====== */
   @media (max-width: 880px) {
+    .board-wrap { grid-template-columns: 1fr; gap: 32px; }
+    .board-wrap .board { grid-column: 1; }
+    .board-wrap .cardapio-intro { grid-column: 1; }
     .container, .topbar-inner { padding-left: 24px; padding-right: 24px; }
     .section-nav { display: none; }
     .casa-grid, .chapa-grid, .ide-grid, .convite-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -279,7 +300,7 @@
   }
   @media (max-width: 480px) {
     body { font-size: 16px; }
-    .board { padding: 34px 20px; }
+    .board { padding: 20px 16px; }
     .course-name { font-size: 1.7rem; }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -293,8 +314,8 @@
     .hero-inner { position: static; align-items: stretch; padding: 20px 0 4px; }
     .hero-text { color: var(--tinta); text-align: left; max-width: none; }
     .hero .eyebrow { color: #356b69; }
-    .hero h1 { color: var(--tinta); }
-    .hero-lead { color: var(--tinta-soft); }
+    .hero h1 { color: #7fa8a9; white-space: normal; }
+    .hero-lead { color: var(--tinta); text-shadow: none; }
     .hero-lead strong { color: var(--tinta); }
   }
 </style>
@@ -304,7 +325,7 @@
 
 <!-- ============== TOPBAR ============== -->
 <div class="topbar">
-  <div class="topbar-inner">
+  <div class="topbar-inner"><div class="topbar-half">
     <div class="brand">
       <span class="seal" aria-hidden="true">
         <svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="1.5" width="57" height="37" rx="5" fill="#141414"/><rect x="4" y="4" width="52" height="32" rx="3" fill="#e6c24a"/><text x="30" y="27" font-family="Hanken Grotesk, sans-serif" font-size="20" font-weight="700" fill="#141414" text-anchor="middle">BR</text></svg>
@@ -325,23 +346,18 @@
     </div>
   </div>
 </div>
+</div>
 
 <!-- ============== HERO (foto no fundo) ============== -->
 <section class="hero">
-  <img class="hero-bg" src="https://carolferres.github.io/content/CasitaDC-Final-3.jpg" alt="Cozinha aberta da Casa Doble Chapa em José Ignacio – madeira, plantas e a lousa com o menu da semana"/>
+  <img class="hero-bg" src="https://carolferres.github.io/content/CasitaDC-Final-4.jpg" alt="Cozinha aberta da Casa Doble Chapa em José Ignacio – madeira, plantas e a lousa com o menu da semana"/>
   <div class="hero-scrim"></div>
   <div class="container hero-inner">
     <div class="hero-text reveal">
       <h1>
-        <span data-lang-pt>O coração do Brasil<br>no coração de José Ignacio</span>
-        <span data-lang-es>El corazón de Brasil<br>en el corazón de José Ignacio</span>
+        <span data-lang-pt>O coração do Brasil no coração de José Ignacio</span>
+        <span data-lang-es>El corazón de Brasil en el corazón de José Ignacio</span>
       </h1>
-      <p class="hero-lead" data-lang-pt>
-        A <strong>Casa Doble Chapa</strong> é uma casa cultural brasileira em José Ignacio – pequena, simples e aberta, onde cinema, literatura, culturas originárias e cozinha se encontram à mesma mesa.
-      </p>
-      <p class="hero-lead" data-lang-es>
-        <strong>Casa Doble Chapa</strong> es una casa cultural brasileña en José Ignacio – pequeña, simple y abierta, donde cine, literatura, culturas originarias y cocina se encuentran en la misma mesa.
-      </p>
     </div>
   </div>
 </section>
@@ -372,22 +388,10 @@
       </div>
       <div class="body reveal">
         <p class="first" data-lang-pt>
-          A sede fica numa casa simples de José Ignacio – um povoado de pescadores no litoral uruguaio que virou ponto de encontro cultural da região. A casa é pequena de propósito: o que importa é a mesa no centro.
+          A <strong>Casa Doble Chapa</strong> é uma casa cultural brasileira em José Ignacio – pequena, simples e aberta, onde cinema, literatura, cultura e cozinha se encontram à mesma mesa. A casa fica no coração de José Ignacio – um povoado de pescadores no litoral uruguaio e ponto de encontro cultural. Na casa as pessoas se sentam, comem, conversam e criam. A cozinha é o <strong>coração</strong>. Um jantar vira lançamento, uma conversa vira projeto, uma receita vira encontro entre dois países.
         </p>
         <p class="first" data-lang-es>
-          La sede está en una casa simple de José Ignacio – un pueblo de pescadores en la costa uruguaya que se volvió punto de encuentro cultural de la región. La casa es pequeña a propósito: lo que importa es la mesa en el centro.
-        </p>
-        <p data-lang-pt>
-          É ali que as pessoas se sentam, comem, conversam e criam. A cozinha não é detalhe – é o <strong>coração</strong>. Um jantar vira lançamento, uma conversa vira projeto, uma receita vira encontro entre dois países.
-        </p>
-        <p data-lang-es>
-          Es ahí donde las personas se sientan, comen, conversan y crean. La cocina no es detalle – es el <strong>corazón</strong>. Una cena se vuelve lanzamiento, una conversación se vuelve proyecto, una receta se vuelve encuentro entre dos países.
-        </p>
-        <p data-lang-pt>
-          José Ignacio é pequeno o suficiente para que as coisas se encontrem sozinhas: uma casa, uma mesa, as pessoas certas.
-        </p>
-        <p data-lang-es>
-          José Ignacio es suficientemente pequeño para que las cosas se encuentren solas: una casa, una mesa, las personas correctas.
+          <strong>Casa Doble Chapa</strong> es una casa cultural brasileña en José Ignacio – pequeña, simple y abierta, donde cine, literatura, cultura y cocina se encuentran en la misma mesa. La casa está en el corazón de José Ignacio – un pueblo de pescadores en la costa uruguaya y punto de encuentro cultural. En la casa las personas se sientan, comen, conversan y crean. La cocina es el <strong>corazón</strong>. Una cena se vuelve lanzamiento, una conversación se vuelve proyecto, una receta se vuelve encuentro entre dos países.
         </p>
       </div>
     </div>
@@ -397,7 +401,7 @@
 <!-- ============== CARDÁPIO (assinatura) ============== -->
 <section class="block cardapio" id="cardapio">
   <div class="container">
-    <div class="cardapio-intro reveal">
+    <div class="board-wrap"><div class="cardapio-intro reveal">
       <div class="eyebrow verde">
         <span data-lang-pt>02 · A programação</span>
         <span data-lang-es>02 · La programación</span>
@@ -406,15 +410,8 @@
         <span data-lang-pt>O que se serve nesta casa</span>
         <span data-lang-es>Lo que se sirve en esta casa</span>
       </h2>
-      <p data-lang-pt>
-        A programação se lê como um cardápio – quatro fios que se alternam ao longo do ano. O cinema é o prato da casa, o mais desenvolvido; os outros se somam conforme a temporada.
-      </p>
-      <p data-lang-es>
-        La programación se lee como un menú – cuatro hilos que se alternan a lo largo del año. El cine es el plato de la casa, el más desarrollado; los demás se suman según la temporada.
-      </p>
-    </div>
 
-    <div class="board reveal">
+    </div><div class="board reveal">
       <div class="board-title">
         <span class="chalk-font" data-lang-pt>Cardápio da casa</span>
         <span class="chalk-font" data-lang-es>Menú de la casa</span>
@@ -429,25 +426,14 @@
         <div class="course">
           <div class="course-head">
             <span class="course-name">Cinema</span>
-            <span class="course-pratodacasa" data-lang-pt>Prato da casa</span>
-            <span class="course-pratodacasa" data-lang-es>Plato de la casa</span>
             <span class="course-dots"></span>
           </div>
           <p data-lang-pt>
-            Residência de roteiro e coprodução Brasil–Uruguai, ligando o JIIFF (janeiro) à Mostra de São Paulo (outubro) num único ciclo criativo.
+            Residência de roteiro e coprodução Brasil–Uruguai, ligando o José Ignacio Film Festival (JIIFF) à Mostra de São Paulo de Cinema.
           </p>
           <p data-lang-es>
-            Residencia de guion y coproducción Brasil–Uruguay, ligando el JIIFF (enero) a la Mostra de São Paulo (octubre) en un único ciclo creativo.
+            Residencia de guion y coproducción Brasil–Uruguay, ligando el José Ignacio Film Festival (JIIFF) a la Mostra de São Paulo de Cinema.
           </p>
-          <div class="cinema-cycle">
-            <div class="cycle-step"><span class="when" data-lang-pt>Janeiro · UY</span><span class="when" data-lang-es>Enero · UY</span><span class="what" data-lang-pt>Abertura no JIIFF</span><span class="what" data-lang-es>Apertura en JIIFF</span></div>
-            <span class="cycle-arrow">→</span>
-            <div class="cycle-step"><span class="when">Fev–Mar</span><span class="what" data-lang-pt>Residência</span><span class="what" data-lang-es>Residencia</span></div>
-            <span class="cycle-arrow">→</span>
-            <div class="cycle-step"><span class="when">Abr–Set</span><span class="what" data-lang-pt>Desenvolvimento</span><span class="what" data-lang-es>Desarrollo</span></div>
-            <span class="cycle-arrow">→</span>
-            <div class="cycle-step"><span class="when" data-lang-pt>Outubro · BR</span><span class="when" data-lang-es>Octubre · BR</span><span class="what">Mostra SP</span></div>
-          </div>
         </div>
 
         <!-- Literatura -->
@@ -457,10 +443,10 @@
             <span class="course-dots"></span>
           </div>
           <p data-lang-pt>
-            Lançamentos e encontros com autores – como o <em>Elis Regina</em>, de Gustavo Duarte – trazendo o livro brasileiro para a mesa uruguaia.
+            Lançamentos e encontros com autores – como o <em>Elis Regina</em>, de Gustavo Duarte.
           </p>
           <p data-lang-es>
-            Lanzamientos y encuentros con autores – como el <em>Elis Regina</em>, de Gustavo Duarte – trayendo el libro brasileño a la mesa uruguaya.
+            Lanzamientos y encuentros con autores – como el <em>Elis Regina</em>, de Gustavo Duarte.
           </p>
         </div>
 
@@ -472,28 +458,16 @@
             <span class="course-dots"></span>
           </div>
           <p data-lang-pt>
-            Exposições de culturas indígenas brasileiras – a cosmologia Tikuna, em parceria com a The Blue City e o trabalho em Palmas.
+            Exposições de culturas indígenas brasileiras – a cosmologia Tikuna e o trabalho da The Blue City.
           </p>
           <p data-lang-es>
-            Exposiciones de culturas indígenas brasileñas – la cosmología Tikuna, en alianza con The Blue City y el trabajo en Palmas.
+            Exposiciones de culturas indígenas brasileñas – la cosmología Tikuna y el trabajo de The Blue City.
           </p>
         </div>
 
-        <!-- Cozinha -->
-        <div class="course">
-          <div class="course-head">
-            <span class="course-name" data-lang-pt>Cozinha</span>
-            <span class="course-name" data-lang-es>Cocina</span>
-            <span class="course-dots"></span>
-          </div>
-          <p data-lang-pt>
-            A comida brasileira como cultura – moqueca, mesa farta, o sabor como forma de aproximar dois países.
-          </p>
-          <p data-lang-es>
-            La comida brasileña como cultura – moqueca, mesa generosa, el sabor como forma de acercar dos países.
-          </p>
-        </div>
+
       </div>
+    </div>
     </div>
   </div>
 </section>
@@ -513,16 +487,10 @@
         </h2>
         <div class="body">
           <p data-lang-pt>
-            Na fronteira, os carros já circularam com <strong>duas placas</strong> – uma brasileira e uma uruguaia – pertencendo aos dois lados ao mesmo tempo. É essa dupla pertença que dá nome à casa.
+            Na fronteira, os carros já circularam com duas placas – uma brasileira e uma uruguaia – pertencendo aos dois lados ao mesmo tempo. É essa dupla pertença que dá nome à casa. E em português a palavra abre ainda mais: <em>chapa</em> é a placa, mas é também a chapa do fogão – o coração quente da cozinha – e é o amigo, o "meu chapa". Duas pertenças, uma mesa, e a companhia que se faz em volta dela.
           </p>
           <p data-lang-es>
-            En la frontera, los autos circularon con <strong>dos matrículas</strong> – una brasileña y una uruguaya – perteneciendo a los dos lados al mismo tiempo. Es esa doble pertenencia la que da nombre a la casa.
-          </p>
-          <p data-lang-pt>
-            E em português a palavra abre ainda mais: <em>chapa</em> é a placa, mas é também a chapa do fogão – o coração quente da cozinha – e é o amigo, o "meu chapa". Duas pertenças, uma mesa, e a companhia que se faz em volta dela.
-          </p>
-          <p data-lang-es>
-            Y en portugués brasileño la palabra se abre todavía más: <em>chapa</em> es la matrícula, pero también la plancha del fogón – el corazón caliente de la cocina – y el amigo, el "meu chapa". Dos pertenencias, una mesa, y la compañía que se hace alrededor de ella.
+            En la frontera, los autos circularon con dos matrículas – una brasileña y una uruguaya – perteneciendo a los dos lados al mismo tiempo. Es esa doble pertenencia la que da nombre a la casa. Y en portugués brasileño la palabra se abre todavía más: <em>chapa</em> es la matrícula, pero también la plancha del fogón – el corazón caliente de la cocina – y el amigo, el "meu chapa". Dos pertenencias, una mesa, y la compañía que se hace alrededor de ella.
           </p>
         </div>
       </div>
@@ -596,10 +564,7 @@
           <span data-lang-es>05 · Ideadora</span>
         </div>
         <h2>Carolina Ferrés</h2>
-        <div class="role">
-          <span data-lang-pt>pontes entre dois mundos</span>
-          <span data-lang-es>puentes entre dos mundos</span>
-        </div>
+
         <dl class="kv">
           <dt>BR</dt><dd>São Paulo</dd>
           <dt>UY</dt><dd>José Ignacio</dd>
@@ -607,16 +572,10 @@
       </div>
       <div class="ide-text reveal">
         <p data-lang-pt>
-          Sou uruguaia, vivo e trabalho no Brasil desde a infância, e atuo na construção de pontes culturais, institucionais e narrativas entre o universo hispano-americano e o brasileiro.
+          Sou uruguaia, vivo e trabalho no Brasil desde a infância, e atuo na construção de pontes culturais, institucionais e narrativas entre o universo hispano-americano e o brasileiro. A Casa Doble Chapa nasce dessa dupla pertença – não como metáfora, mas como prática. Uma casa pequena em José Ignacio onde o Brasil chega pela porta da cozinha.
         </p>
         <p data-lang-es>
-          Soy uruguaya, vivo y trabajo en Brasil desde la infancia, y actúo en la construcción de puentes culturales, institucionales y narrativos entre el universo hispanoamericano y el brasileño.
-        </p>
-        <p data-lang-pt>
-          A Casa Doble Chapa nasce dessa dupla pertença – não como metáfora, mas como prática. Uma casa pequena em José Ignacio onde o Brasil chega pela porta da cozinha.
-        </p>
-        <p data-lang-es>
-          Casa Doble Chapa nace de esa doble pertenencia – no como metáfora, sino como práctica. Una casa pequeña en José Ignacio donde Brasil llega por la puerta de la cocina.
+          Soy uruguaya, vivo y trabajo en Brasil desde la infancia, y actúo en la construcción de puentes culturales, institucionales y narrativos entre el universo hispanoamericano y el brasileño. Casa Doble Chapa nace de esa doble pertenencia – no como metáfora, sino como práctica. Una casa pequeña en José Ignacio donde Brasil llega por la puerta de la cocina.
         </p>
       </div>
     </div>
