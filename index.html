@@ -223,7 +223,7 @@
   .course-dots { flex: 1; border-bottom: 1.5px dotted rgba(239,233,221,0.3); transform: translateY(-5px); min-width: 30px; }
   .course p { margin-top: 8px; opacity: 0.86; font-size: 0.95rem; max-width: 52em; }
   .course-note { display: block; margin-top: 5px; font-family: 'Caveat', cursive; font-size: 1.25rem; line-height: 1; color: var(--chalk); opacity: 0.92; }
-  .course p.course-hand { font-family: 'Hanken Grotesk', system-ui, sans-serif; text-transform: uppercase; font-style: normal; font-size: 0.74rem; letter-spacing: 0.18em; line-height: 1.7; color: var(--chalk); opacity: 0.6; margin-top: 8px; max-width: none; }
+  .course p.course-hand { font-family: 'Hanken Grotesk', system-ui, sans-serif; text-transform: uppercase; font-style: normal; font-size: 0.66rem; letter-spacing: 0.16em; line-height: 1.7; color: var(--chalk); opacity: 0.6; margin-top: 8px; max-width: none; }
 
   .cinema-cycle { display: flex; flex-wrap: wrap; gap: 10px 8px; margin-top: 16px; }
   .cycle-step {
@@ -269,7 +269,7 @@
 
   /* ====== IDEALIZADORA (claro) ====== */
   .ide { background: transparent; }
-  .ide-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 56px; align-items: start; }
+  .ide-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 44px; align-items: start; }
   .ide h2 { font-size: clamp(2.2rem, 3vw, 2.5rem); font-family: 'Fraunces', Georgia, serif; font-weight: 500; }
   .ide .role { font-family: 'Caveat', cursive; font-size: 1.7rem; color: var(--amarelo); margin-top: 8px; }
   .ide .kv { margin-top: 26px; display: grid; grid-template-columns: auto 1fr; gap: 8px 18px; font-size: 0.92rem; }
@@ -277,7 +277,8 @@
   .ide .kv dd { color: var(--tinta); }
   .ide-text p { margin-top: 1em; color: var(--tinta); font-size: 1.08rem; max-width: none; }
   .ide-text p:first-child { margin-top: 0; font-size: 1.08rem; color: var(--tinta); }
-  .ide-photos { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 400px; }
+  .ide-photos { grid-column: 1; grid-row: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .ide-text { grid-column: 2; grid-row: 1; }
   .ide-photos img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; display: block; }
 
   /* ====== CONVITE ====== */
@@ -308,6 +309,9 @@
     .container, .topbar-inner { padding-left: 24px; padding-right: 24px; }
     .section-nav { display: none; }
     .casa-grid, .chapa-grid, .ide-grid, .convite-grid, .lugar-grid { grid-template-columns: 1fr; gap: 16px; }
+    .casa-grid { gap: 0; }
+    .ide-photos, .ide-text { grid-column: auto; grid-row: auto; }
+    .ide-photos { grid-template-columns: 1fr 1fr; max-width: 400px; margin-top: 6px; }
     .eco-grid { grid-template-columns: 1fr; }
     .hero-inner { padding-top: 32px; padding-bottom: 26px; }
     section.block { padding: 60px 0; }
@@ -475,8 +479,8 @@
             <span class="course-name">Cinema</span>
             <span class="course-dots"></span>
           </div>
-          <p class="course-hand" data-lang-pt>Sala de roteiros e coprodução Brasil–Uruguai.</p>
-          <p class="course-hand" data-lang-es>Sala de guiones y coproducción Brasil–Uruguay.</p>
+          <p class="course-hand" data-lang-pt>Sala de roteiros e coprodução Brasil–Uruguai</p>
+          <p class="course-hand" data-lang-es>Sala de guiones y coproducción Brasil–Uruguay</p>
         </div>
 
         <!-- Literatura -->
@@ -485,8 +489,8 @@
             <span class="course-name">Literatura</span>
             <span class="course-dots"></span>
           </div>
-          <p class="course-hand" data-lang-pt>Inauguração · Elis! Uma fantasia biográfica, por Gustavo Duarte</p>
-          <p class="course-hand" data-lang-es>Inauguración · Elis! Una fantasía biográfica, por Gustavo Duarte</p>
+          <p class="course-hand" data-lang-pt>Elis! Uma fantasia biográfica, por Gustavo Duarte</p>
+          <p class="course-hand" data-lang-es>Elis! Una fantasía biográfica, por Gustavo Duarte</p>
         </div>
 
         <!-- Arte -->
@@ -495,8 +499,8 @@
             <span class="course-name">Arte</span>
             <span class="course-dots"></span>
           </div>
-          <p class="course-hand" data-lang-pt>Inauguração · A cosmologia Tikuna (The Blue City)</p>
-          <p class="course-hand" data-lang-es>Inauguración · La cosmología Tikuna (The Blue City)</p>
+          <p class="course-hand" data-lang-pt>A cosmologia Tikuna (The Blue City)</p>
+          <p class="course-hand" data-lang-es>La cosmología Tikuna (The Blue City)</p>
         </div>
 
         <!-- Música -->
@@ -653,30 +657,23 @@
 <section class="block ide" id="ide">
   <div class="container">
     <div class="ide-grid">
-      <div class="reveal">
+      <div class="ide-text reveal">
         <div class="eyebrow">
           <span data-lang-pt>05 · Idealizadora</span>
           <span data-lang-es>05 · Ideadora</span>
         </div>
         <h2>Carolina Ferrés</h2>
 
-        <dl class="kv">
-          <dt>BR</dt><dd>São Paulo</dd>
-          <dt>UY</dt><dd>José Ignacio</dd>
-        </dl>
-
-        <div class="ide-photos">
-          <img src="https://carolferres.github.io/content/CaroFerres.jpg" alt="Carolina Ferrés, idealizadora da Casa Doble Chapa"/>
-          <img src="https://carolferres.github.io/content/Doblechapa.jpg" alt="As duas placas – uma brasileira e uma uruguaia – que dão nome à casa"/>
-        </div>
-      </div>
-      <div class="ide-text reveal">
         <p data-lang-pt>
           Sou uruguaia, vivo e trabalho no Brasil desde a infância, e atuo na construção de pontes culturais, institucionais e narrativas entre o universo brasileiro e o hispano-americano. A Casa Doble Chapa nasce dessa dupla pertença. O nome vem da fronteira, onde os carros já circularam com duas placas – uma brasileira e uma uruguaia – pertencendo aos dois lados ao mesmo tempo.
         </p>
         <p data-lang-es>
           Soy uruguaya, vivo y trabajo en Brasil desde la infancia, y actúo en la construcción de puentes culturales, institucionales y narrativos entre el universo brasileño y el hispanoamericano. Casa Doble Chapa nace de esa doble pertenencia. El nombre viene de la frontera, donde los autos circularon con dos matrículas – una brasileña y una uruguaya – perteneciendo a los dos lados al mismo tiempo.
         </p>
+      </div>
+      <div class="ide-photos reveal">
+        <img src="https://carolferres.github.io/content/CaroFerres.jpg" alt="Carolina Ferrés, idealizadora da Casa Doble Chapa"/>
+        <img src="https://carolferres.github.io/content/Doblechapa.jpg" alt="As duas placas – uma brasileira e uma uruguaia – que dão nome à casa"/>
       </div>
     </div>
   </div>
@@ -705,11 +702,6 @@
         </div>
       </div>
       <div class="contato-info reveal">
-        <div class="contato-item">
-          <div class="tag">Carolina Ferrés</div>
-          <span class="val" data-lang-pt>Idealizadora</span>
-          <span class="val" data-lang-es>Ideadora</span>
-        </div>
         <div class="contato-item">
           <div class="tag">E-mail</div>
           <a href="mailto:cafe@cafenarua.org">cafe@cafenarua.org</a>
