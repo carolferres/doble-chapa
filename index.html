@@ -318,7 +318,7 @@
   }
   @media (max-width: 480px) {
     body { font-size: 16px; }
-    .board { padding: 20px 16px; }
+    .board { padding: 24px 28px; }
     .course-name { font-size: 1.35rem; }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -328,11 +328,10 @@
   }
   @media (max-width: 880px) { body { background-attachment: scroll; } }
   @media (max-width: 620px) {
-    .hero-scrim { display: none; }
-    .hero-inner { position: static; align-items: stretch; padding: 20px 0 4px; }
-    .hero-text { color: var(--tinta); text-align: left; max-width: none; }
-    .hero .eyebrow { color: #356b69; }
-    .hero h1 { color: #356b69; background: transparent; padding: 0; white-space: normal; font-size: clamp(1.2rem, 4.5vw, 1.55rem); line-height: 1.2; margin-bottom: 4px; }
+    .hero-scrim { display: block; background: linear-gradient(to top, rgba(8,6,5,0.82) 0%, rgba(8,6,5,0.42) 26%, rgba(8,6,5,0) 52%); }
+    .hero-inner { position: absolute; inset: 0; justify-content: flex-end; align-items: flex-start; padding: 0 22px 18px; }
+    .hero-text { color: #fff; text-align: left; max-width: none; }
+    .hero h1 { color: #fff; background: transparent; padding: 0; white-space: normal; font-size: clamp(1.2rem, 4.5vw, 1.6rem); line-height: 1.18; margin: 0; text-shadow: 0 1px 10px rgba(0,0,0,0.45); }
     .hero h1::after { display: none; }
     .casa h2, .cardapio-intro h2, .chapa-sec h2, .lugar h2, .eco h2, .ide h2, .convite h2 { font-size: 1.85rem; }
     .hero-lead { color: var(--tinta); text-shadow: none; }
