@@ -51,7 +51,7 @@
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
   body {
     font-family: 'Hanken Grotesk', system-ui, sans-serif;
@@ -223,7 +223,7 @@
   .course-dots { flex: 1; border-bottom: 1.5px dotted rgba(239,233,221,0.3); transform: translateY(-5px); min-width: 30px; }
   .course p { margin-top: 8px; opacity: 0.86; font-size: 0.95rem; max-width: 52em; }
   .course-note { display: block; margin-top: 5px; font-family: 'Caveat', cursive; font-size: 1.25rem; line-height: 1; color: var(--chalk); opacity: 0.92; }
-  .course-hand { font-family: 'Caveat', cursive; font-style: italic; font-size: 1.3rem; line-height: 1.1; color: var(--chalk); opacity: 0.92; margin-top: 4px; }
+  .course p.course-hand { font-family: 'Hanken Grotesk', system-ui, sans-serif; text-transform: uppercase; font-style: normal; font-size: 0.74rem; letter-spacing: 0.18em; line-height: 1.7; color: var(--chalk); opacity: 0.6; margin-top: 8px; max-width: none; }
 
   .cinema-cycle { display: flex; flex-wrap: wrap; gap: 10px 8px; margin-top: 16px; }
   .cycle-step {
@@ -305,7 +305,7 @@
     .board-wrap .cardapio-intro { grid-column: 1; grid-row: auto; }
     .container, .topbar-inner { padding-left: 24px; padding-right: 24px; }
     .section-nav { display: none; }
-    .casa-grid, .chapa-grid, .ide-grid, .convite-grid, .lugar-grid { grid-template-columns: 1fr; gap: 36px; }
+    .casa-grid, .chapa-grid, .ide-grid, .convite-grid, .lugar-grid { grid-template-columns: 1fr; gap: 16px; }
     .eco-grid { grid-template-columns: 1fr; }
     .hero-inner { padding-top: 32px; padding-bottom: 26px; }
     section.block { padding: 60px 0; }
@@ -326,7 +326,9 @@
     .hero-inner { position: static; align-items: stretch; padding: 20px 0 4px; }
     .hero-text { color: var(--tinta); text-align: left; max-width: none; }
     .hero .eyebrow { color: #356b69; }
-    .hero h1 { color: #7fa8a9; white-space: normal; }
+    .hero h1 { color: #356b69; background: transparent; padding: 0; white-space: normal; font-size: clamp(1.2rem, 4.5vw, 1.55rem); line-height: 1.2; margin-bottom: 4px; }
+    .hero h1::after { display: none; }
+    .casa h2, .cardapio-intro h2, .chapa-sec h2, .lugar h2, .eco h2, .ide h2, .convite h2 { font-size: 1.85rem; }
     .hero-lead { color: var(--tinta); text-shadow: none; }
     .hero-lead strong { color: var(--tinta); }
   }
@@ -471,8 +473,8 @@
             <span class="course-name">Cinema</span>
             <span class="course-dots"></span>
           </div>
-          <p class="course-hand" data-lang-pt>Residência de roteiros e coprodução Brasil–Uruguai.</p>
-          <p class="course-hand" data-lang-es>Residencia de guiones y coproducción Brasil–Uruguay.</p>
+          <p class="course-hand" data-lang-pt>Sala de roteiros e coprodução Brasil–Uruguai.</p>
+          <p class="course-hand" data-lang-es>Sala de guiones y coproducción Brasil–Uruguay.</p>
         </div>
 
         <!-- Literatura -->
