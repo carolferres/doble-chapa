@@ -277,6 +277,8 @@
   .ide .kv dd { color: var(--tinta); }
   .ide-text p { margin-top: 1em; color: var(--tinta); font-size: 1.08rem; max-width: none; }
   .ide-text p:first-child { margin-top: 0; font-size: 1.08rem; color: var(--tinta); }
+  .ide-photos { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 400px; }
+  .ide-photos img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; display: block; }
 
   /* ====== CONVITE ====== */
   .convite-grid { display: grid; grid-template-columns: 1fr 0.9fr; gap: 56px; align-items: center; }
@@ -662,6 +664,11 @@
           <dt>BR</dt><dd>São Paulo</dd>
           <dt>UY</dt><dd>José Ignacio</dd>
         </dl>
+
+        <div class="ide-photos">
+          <img src="https://carolferres.github.io/content/CaroFerres.jpg" alt="Carolina Ferrés, idealizadora da Casa Doble Chapa"/>
+          <img src="https://carolferres.github.io/content/Doblechapa.jpg" alt="As duas placas – uma brasileira e uma uruguaia – que dão nome à casa"/>
+        </div>
       </div>
       <div class="ide-text reveal">
         <p data-lang-pt>
