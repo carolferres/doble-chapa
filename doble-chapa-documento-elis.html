@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Doble Chapa – Elis!</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --tinta:         #241f1b;
+    --tinta-soft:    #564b42;
+    --amarelo-funda: #936b0e;
+    --verde-funda:   #54614a;
+    --rule:          rgba(36,31,27,0.14);
+    --rule-strong:   rgba(36,31,27,0.32);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #e7e4de;
+    font-family: 'Hanken Grotesk', system-ui, sans-serif;
+    color: var(--tinta);
+  }
+
+  body {
+    padding: 48px 16px 96px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ====== A folha ====== */
+  .page {
+    max-width: 794px; /* A4 a 96dpi */
+    min-height: 1123px;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(36,31,27,0.08), 0 24px 60px -20px rgba(36,31,27,0.28);
+    padding: 90px 96px;
+  }
+
+  /* ====== Cabeçalho ====== */
+  .masthead {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 54px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .seal { display: flex; gap: 3px; }
+  .seal svg { display: block; height: 19px; width: auto; }
+  .masthead .name { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; }
+  .masthead .doc-tag {
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    font-weight: 700; color: var(--verde-funda);
+  }
+
+  /* ====== Título ====== */
+  .doc-title { margin-bottom: 48px; }
+  .eyebrow {
+    font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+    font-weight: 700; color: var(--verde-funda); margin-bottom: 10px; display: block;
+  }
+  h1 {
+    font-family: 'Fraunces', Georgia, serif; font-weight: 500;
+    font-size: 2.1rem; line-height: 1.18; letter-spacing: -0.01em; color: var(--tinta);
+  }
+  .doc-lead { margin-top: 14px; font-size: 1rem; color: var(--tinta); max-width: 40em; }
+
+  /* ====== Seções ====== */
+  section.sec { margin-bottom: 18px; }
+  .sec h2 {
+    font-family: 'Fraunces', Georgia, serif; font-weight: 500;
+    font-size: 1.4rem; color: var(--tinta); margin-bottom: 16px;
+  }
+  .sec p { font-size: 0.98rem; color: var(--tinta); max-width: 44em; text-align: left; }
+  .sec p + p { margin-top: 1em; }
+  .sec p strong { font-weight: 700; }
+  .sec p em { font-style: italic; }
+
+  hr.rule { display: none; }
+
+  /* ====== Ficha técnica (lista compacta, texto de documento) ====== */
+  dl.ficha {
+    margin-top: 1em; font-size: 0.98rem; color: var(--tinta);
+  }
+  dl.ficha div { padding: 3px 0; }
+  dl.ficha dt {
+    display: inline; font-weight: 700;
+  }
+  dl.ficha dt::after { content: ": "; font-weight: 700; }
+  dl.ficha dd { display: inline; }
+  dl.ficha dd.pending { font-style: italic; color: var(--tinta-soft); }
+
+  /* ====== Apoio (espaço para logotipos) ====== */
+  .apoio { margin-top: 50px; }
+  .apoio .tag {
+    font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
+    font-weight: 700; color: var(--verde-funda); margin-bottom: 14px; display: block;
+  }
+  .apoio-slots { display: flex; gap: 16px; flex-wrap: wrap; }
+  .apoio-slot {
+    width: 200px; height: 72px;
+    border: 1px dashed var(--rule-strong); border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 8px;
+  }
+  .apoio-slot span {
+    font-size: 0.78rem; color: var(--tinta-soft); font-style: italic;
+  }
+
+  /* ====== Rodapé ====== */
+  .doc-footer {
+    margin-top: 56px;
+    font-size: 0.82rem; color: var(--tinta-soft);
+  }
+  .doc-footer p { margin-top: 4px; }
+  .doc-footer a { color: var(--tinta-soft); }
+
+  @media (max-width: 640px) {
+    .page { padding: 48px 28px; }
+    table.ficha td.label { width: 100px; }
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; max-width: none; min-height: 0; padding: 20mm; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="masthead">
+    <div class="brand">
+      <span class="seal" aria-hidden="true">
+        <svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="1.5" width="57" height="37" rx="5" fill="#141414"/><rect x="4" y="4" width="52" height="32" rx="3" fill="#375b50"/><text x="30" y="27" font-family="Hanken Grotesk, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">BR</text></svg>
+        <svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="1.5" width="57" height="37" rx="5" fill="#141414"/><rect x="4" y="4" width="52" height="32" rx="3" fill="#e6c24a"/><text x="30" y="27" font-family="Hanken Grotesk, sans-serif" font-size="20" font-weight="700" fill="#141414" text-anchor="middle">UY</text></svg>
+      </span>
+      <span class="name">Casa Doble Chapa</span>
+    </div>
+  </div>
+
+  <div class="doc-title">
+    <h1>Elis! Uma fantasia biográfica</h1>
+    <p class="doc-lead">A maior cantora do Brasil, ilustrada por um dos mais premiados quadrinistas brasileiros.</p>
+  </div>
+
+  <section class="sec">
+    <p><strong>Elis! Uma fantasia biográfica</strong> é o livro de Gustavo Duarte que revisita a trajetória de Elis Regina em chave de fantasia biográfica. O gênero cruza dois registros – o rigor da biografia e a liberdade da fantasia – para reconstruir não só os fatos de uma vida, mas o imaginário em torno dela. Elis Regina atravessa a obra como figura e como símbolo: a intérprete que se tornou parte do imaginário musical brasileiro.</p>
+
+    <dl class="ficha">
+      <div><dt>Obra</dt><dd>Elis! Uma fantasia biográfica</dd></div>
+      <div><dt>Autor</dt><dd>Gustavo Duarte</dd></div>
+      <div><dt>Local</dt><dd>Casa Doble Chapa, José Ignacio</dd></div>
+      <div><dt>Data</dt><dd>23 a 30 de janeiro</dd></div>
+      <div><dt>Formato</dt><dd class="pending">a confirmar</dd></div>
+    </dl>
+  </section>
+
+  <hr class="rule">
+
+  <section class="sec">
+    <h2>O projeto</h2>
+    <p><strong>Casa Doble Chapa</strong> é uma casa cultural brasileira em José Ignacio, no litoral uruguaio – pequena, simples e aberta, onde cinema, literatura, arte, música e cozinha se encontram à mesma mesa. Por fora, é uma casa simples perto da praça, com a fachada discreta de sempre; por dentro, um ponto de encontro entre os dois países.</p>
+    <p>Na casa as pessoas se sentam, comem, conversam e criam. A cozinha é o coração: um jantar vira lançamento, uma conversa vira projeto, uma receita vira encontro entre Brasil e Uruguai. No cinema, a casa apoia projetos de roteiro audiovisual binacionais. Na literatura, recebe lançamentos e encontros com autores. Nas paredes, expõe diferentes culturas brasileiras. Na música, atravessa os dois países. E na cozinha, traz os temperos brasileiros para o centro da mesa.</p>
+    <p>É nessa linha de Literatura que o lançamento de <strong>Elis! Uma fantasia biográfica</strong> acontece – o primeiro encontro entre autor e público à mesa de José Ignacio, um lançamento que também é jantar, na tradição que a própria casa se propõe a cultivar.</p>
+  </section>
+
+  <div class="apoio">
+    <span class="tag">Apoio</span>
+    <div class="apoio-slots">
+      <div class="apoio-slot"><span>Embaixada do Brasil no Uruguai</span></div>
+      <div class="apoio-slot"><span>Consulado do Uruguai em São Paulo</span></div>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <p>Casa Doble Chapa – José Ignacio, Uruguai</p>
+    <p><a href="mailto:cafe@cafenarua.org">cafe@cafenarua.org</a> · +55 11 9 9377 3335 · +598 97 955 654</p>
+  </div>
+
+</div>
+
+</body>
+</html>
