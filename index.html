@@ -4,36 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Casa Doble Chapa – José Ignacio</title>
-<meta name="description" content="Casa Doble Chapa – casa cultural brasileira em José Ignacio, onde cinema, literatura, arte, música e cozinha se encontram à mesma mesa.">
+<meta name="description" content="Casa cultural brasileira em José Ignacio, Punta del Este, Uruguai, onde literatura, arte, cinema, música e cozinha se encontram à mesma mesa.">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://doblechapa.art/">
 <meta property="og:title" content="Casa Doble Chapa – Um pedacinho do Brasil no coração de José Ignacio">
-<meta property="og:description" content="Casa cultural brasileira em José Ignacio – cinema, literatura, arte, música e cozinha à mesma mesa.">
+<meta property="og:description" content="Casa cultural brasileira em José Ignacio, Punta del Este, Uruguai, onde literatura, arte, cinema, música e cozinha se encontram à mesma mesa.">
 <meta property="og:image" content="https://carolferres.github.io/content/CasaDobleChapa-og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="es_UY">
 <meta property="og:site_name" content="Casa Doble Chapa">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Casa Doble Chapa – Um pedacinho do Brasil no coração de José Ignacio">
-<meta name="twitter:description" content="Casa cultural brasileira em José Ignacio – cinema, literatura, arte, música e cozinha à mesma mesa.">
+<meta name="twitter:description" content="Casa cultural brasileira em José Ignacio, Punta del Este, Uruguai, onde literatura, arte, cinema, música e cozinha se encontram à mesma mesa.">
 <meta name="twitter:image" content="https://carolferres.github.io/content/CasaDobleChapa-og.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
   :root {
     /* Paleta da cozinha sobre branco – José Ignacio */
     --cal:           #ffffff;  /* fundo branco */
     --cal-deep:      #f6f4f0;  /* alternância sutil */
-    --tinta:         #241f1b;  /* texto */
+    --tinta:         #000000;  /* texto */
     --tinta-soft:    #564b42;
     --madeira:       #967a64;
     --madeira-funda: #6c543c;
@@ -273,15 +273,15 @@
   .eco-intro { max-width: 42em; color: var(--tinta); margin: 14px 0 44px; font-size: 1.08rem; }
   .eco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
   .eco-card { border: 1px solid var(--rule-strong); border-radius: 4px; padding: 26px 24px; background: var(--cal); }
-  .eco-card .when { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--amarelo-funda); }
+  .eco-card .when { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: #356b69; }
   .eco-card.uy .when { color: var(--verde-funda); }
   .eco-card h3 { font-size: 1.2rem; margin: 8px 0 4px; }
-  .eco-card .meta { font-size: 0.82rem; color: var(--amarelo); font-weight: 600; margin-bottom: 12px; }
+  .eco-card .meta { font-size: 0.82rem; color: var(--amarelo-funda); font-weight: 600; margin-bottom: 12px; }
   .eco-card p { font-size: 0.96rem; color: var(--tinta); }
 
   /* ====== IDEALIZADORA (claro) ====== */
   .ide.block { background: transparent; padding-top: 82px; }
-  .ide-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 44px; align-items: start; }
+  .ide-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
   .ide h2 { font-size: clamp(2.2rem, 3vw, 2.5rem); font-family: 'Fraunces', Georgia, serif; font-weight: 500; }
   .ide .role { font-family: 'Caveat', cursive; font-size: 1.7rem; color: var(--amarelo); margin-top: 8px; }
   .ide .kv { margin-top: 26px; display: grid; grid-template-columns: auto 1fr; gap: 8px 18px; font-size: 0.92rem; }
@@ -289,9 +289,9 @@
   .ide .kv dd { color: var(--tinta); }
   .ide-text p { margin-top: 1em; color: var(--tinta); font-size: 1.08rem; max-width: none; }
   .ide-text p:first-child { margin-top: 0; font-size: 1.08rem; color: var(--tinta); }
-  .ide-photos { grid-column: 1; grid-row: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .ide-text { grid-column: 2; grid-row: 1; }
-  .ide-photos img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; display: block; }
+  .ide-photos { grid-column: 2; grid-row: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 460px; justify-self: center; }
+  .ide-text { grid-column: 1; grid-row: 1; }
+  .ide-photos img { width: 100%; height: auto; border-radius: 8px; display: block; }
 
   /* ====== CONVITE ====== */
   .convite-grid { display: grid; grid-template-columns: 1.6fr 0.7fr; gap: 56px; align-items: start; }
@@ -303,6 +303,40 @@
   .contato-item .tag { font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--verde-funda); margin-bottom: 2px; }
   .contato-item a, .contato-item .val { font-size: 0.9rem; font-weight: 400; color: var(--tinta); text-decoration: none; }
   .contato-item a:hover { color: var(--amarelo); }
+
+  /* ====== A PROPOSTA (eixos) ====== */
+  .proposta h2, .ji h2 { font-size: clamp(2.2rem, 3vw, 2.5rem); font-family: 'Fraunces', Georgia, serif; font-weight: 500; }
+  .proposta .body p, .ji .body p { color: var(--tinta); font-size: 1.08rem; max-width: none; }
+  .ji .body p + p { margin-top: 1em; }
+  .split-line { border-left: 1px solid #000; padding-left: 36px; }
+  .eixos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 56px; }
+  .eixo-head { display: flex; align-items: center; gap: 10px; }
+  .eixo h3 { font-size: 1.3rem; letter-spacing: -0.01em; }
+  .eixo p { font-size: 0.98rem; margin-top: 10px; color: var(--tinta); }
+  .plate {
+    flex-shrink: 0; width: 30px; height: 20px; border: 1.5px solid #141414; border-radius: 3px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 0.72rem; font-weight: 700; color: #000; line-height: 1;
+    background:
+      radial-gradient(circle at 2.6px 2.6px, #141414 0.7px, transparent 1.1px),
+      radial-gradient(circle at calc(100% - 2.6px) 2.6px, #141414 0.7px, transparent 1.1px),
+      radial-gradient(circle at 2.6px calc(100% - 2.6px), #141414 0.7px, transparent 1.1px),
+      radial-gradient(circle at calc(100% - 2.6px) calc(100% - 2.6px), #141414 0.7px, transparent 1.1px),
+      var(--amarelo);
+  }
+
+  /* ====== POR QUE JOSÉ IGNACIO (matérias) ====== */
+  .press { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 48px; }
+  .press-card { display: flex; flex-direction: column; text-decoration: none; color: var(--tinta); }
+  .press-card .when { color: #356b69; }
+  .press-card h3 { font-size: 1.08rem; line-height: 1.25; }
+  .press-card p { font-size: 0.92rem; }
+  .press-link { margin-top: auto; padding-top: 12px; font-size: 0.8rem; font-weight: 700; color: var(--amarelo-funda); letter-spacing: 0.04em; }
+  .press-card:hover h3 { color: var(--amarelo-funda); }
+
+  /* ====== CONTATO ====== */
+  .contato-row { display: flex; flex-wrap: wrap; gap: 28px 64px; margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--rule-strong); }
+  .contato-row .contato-item a { font-size: 1.15rem; font-weight: 500; }
 
   /* ====== FOOTER ====== */
   footer { padding: 18px 0 28px; }
@@ -322,6 +356,8 @@
     .container, .topbar-inner { padding-left: 24px; padding-right: 24px; }
     .section-nav { display: none; }
     .casa-grid, .chapa-grid, .ide-grid, .convite-grid, .lugar-grid { grid-template-columns: 1fr; gap: 16px; }
+    .eixos, .press { grid-template-columns: 1fr 1fr; gap: 22px; }
+    .split-line { border-left: 0; padding-left: 0; }
     .logo-rail { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .casa-grid { gap: 0; }
     .ide-photos, .ide-text { grid-column: auto; grid-row: auto; }
@@ -361,7 +397,8 @@
       content: ""; display: block; position: absolute;
       top: 0; bottom: 0; left: 100%; width: 100vw; background: #1d1d1f;
     }
-    .casa h2, .cardapio-intro h2, .chapa-sec h2, .lugar h2, .eco h2, .ide h2, .convite h2 { font-size: 1.85rem; }
+    .casa h2, .cardapio-intro h2, .chapa-sec h2, .lugar h2, .eco h2, .ide h2, .convite h2, .proposta h2, .ji h2 { font-size: 1.85rem; }
+    .eixos, .press { grid-template-columns: 1fr; }
     .hero-lead { color: var(--tinta); text-shadow: none; }
     .hero-lead strong { color: var(--tinta); }
     /* faixa de palavras menor no mobile */
@@ -459,11 +496,12 @@
     </div>
     <nav class="section-nav" aria-label="Seções">
       <a href="#casa" data-lang-pt>Bem-vindos</a><a href="#casa" data-lang-es>Bienvenidos</a>
-      <a href="#cardapio" data-lang-pt>Programação</a><a href="#cardapio" data-lang-es>Programación</a>
-      <a href="#lugar" data-lang-pt>A casa</a><a href="#lugar" data-lang-es>La casa</a>
+      <a href="#proposta" data-lang-pt>A proposta</a><a href="#proposta" data-lang-es>La propuesta</a>
+      <a href="#ji" data-lang-pt>O lugar</a><a href="#ji" data-lang-es>El lugar</a>
       <a href="#eco" data-lang-pt>Circuito</a><a href="#eco" data-lang-es>Circuito</a>
+      <a href="#lugar" data-lang-pt>A casa</a><a href="#lugar" data-lang-es>La casa</a>
       <a href="#ide" data-lang-pt>Idealizadora</a><a href="#ide" data-lang-es>Idealizadora</a>
-      <a href="#convite" data-lang-pt>Apresentação</a><a href="#convite" data-lang-es>Presentación</a>
+      <a href="#convite" data-lang-pt>Contato</a><a href="#convite" data-lang-es>Contacto</a>
     </nav>
     <div class="lang-toggle">
       <button class="active" onclick="setLang('pt', this)">PT</button>
@@ -490,10 +528,10 @@
 <!-- ============== STRIP ============== -->
 <div class="strip" aria-hidden="true">
   <div class="strip-track">
-    <span data-lang-pt>Cinema</span><span data-lang-pt>Literatura</span><span data-lang-pt>Arte</span><span data-lang-pt>Música</span><span data-lang-pt>Cozinha</span><span data-lang-pt>José Ignacio</span><span data-lang-pt>Brasil–Uruguai</span>
-    <span data-lang-pt>Cinema</span><span data-lang-pt>Literatura</span><span data-lang-pt>Arte</span><span data-lang-pt>Música</span><span data-lang-pt>Cozinha</span><span data-lang-pt>José Ignacio</span><span data-lang-pt>Brasil–Uruguai</span>
-    <span data-lang-es>Cine</span><span data-lang-es>Literatura</span><span data-lang-es>Arte</span><span data-lang-es>Música</span><span data-lang-es>Cocina</span><span data-lang-es>José Ignacio</span><span data-lang-es>Brasil–Uruguay</span>
-    <span data-lang-es>Cine</span><span data-lang-es>Literatura</span><span data-lang-es>Arte</span><span data-lang-es>Música</span><span data-lang-es>Cocina</span><span data-lang-es>José Ignacio</span><span data-lang-es>Brasil–Uruguay</span>
+    <span data-lang-pt>Literatura</span><span data-lang-pt>Arte</span><span data-lang-pt>Cinema</span><span data-lang-pt>Música</span><span data-lang-pt>Cozinha</span><span data-lang-pt>José Ignacio</span><span data-lang-pt>Brasil–Uruguai</span>
+    <span data-lang-pt>Literatura</span><span data-lang-pt>Arte</span><span data-lang-pt>Cinema</span><span data-lang-pt>Música</span><span data-lang-pt>Cozinha</span><span data-lang-pt>José Ignacio</span><span data-lang-pt>Brasil–Uruguai</span>
+    <span data-lang-es>Literatura</span><span data-lang-es>Arte</span><span data-lang-es>Cine</span><span data-lang-es>Música</span><span data-lang-es>Cocina</span><span data-lang-es>José Ignacio</span><span data-lang-es>Brasil–Uruguay</span>
+    <span data-lang-es>Literatura</span><span data-lang-es>Arte</span><span data-lang-es>Cine</span><span data-lang-es>Música</span><span data-lang-es>Cocina</span><span data-lang-es>José Ignacio</span><span data-lang-es>Brasil–Uruguay</span>
   </div>
 </div>
 
@@ -507,79 +545,118 @@
           <span data-lang-es>01 · Bienvenidos</span>
         </div>
         <h2>
-          <span data-lang-pt>Uma casa pequena<br>com uma mesa grande</span>
-          <span data-lang-es>Una casa pequeña<br>con una mesa grande</span>
+          <span data-lang-pt>Uma casa acolhedora<br>com uma mesa deliciosa</span>
+          <span data-lang-es>Una casa acogedora<br>con una mesa deliciosa</span>
         </h2>
       </div>
-      <div class="body reveal">
-        <p class="first" data-lang-pt>
-          <strong>Casa Doble Chapa</strong> é uma casa cultural brasileira em José Ignacio – acolhedora e aberta, onde cinema, literatura, arte, música e cozinha se encontram. Na casa as pessoas se sentam, comem, conversam e criam. Um jantar vira lançamento, uma conversa vira projeto, uma receita vira encontro entre dois países.
-        </p>
-        <p class="first" data-lang-es>
-          <strong>Casa Doble Chapa</strong> es una casa cultural brasileña en José Ignacio – acogedora y abierta, donde cine, literatura, arte, música y cocina se encuentran. En la casa las personas se sientan, comen, conversan y crean. Una cena se vuelve lanzamiento, una conversación se vuelve proyecto, una receta se vuelve encuentro entre dos países.
-        </p>
+      <div class="body reveal split-line">
+        <p class="first" data-lang-pt><strong>Casa Doble Chapa</strong> é uma casa cultural brasileira em José Ignacio, Punta del Este, Uruguai. Acolhedora e aberta, onde literatura, arte, cinema, música e cozinha se encontram.</p>
+        <p data-lang-pt>Na casa as pessoas se sentam, comem, conversam e criam. Um jantar vira lançamento, uma conversa vira projeto, uma receita vira encontro entre dois países.</p>
+        <p class="first" data-lang-es><strong>Casa Doble Chapa</strong> es una casa cultural brasileña en José Ignacio, Punta del Este, Uruguay. Acogedora y abierta, donde literatura, arte, cine, música y cocina se encuentran.</p>
+        <p data-lang-es>En la casa las personas se sientan, comen, conversan y crean. Una cena se vuelve lanzamiento, una conversación se vuelve proyecto, una receta se vuelve encuentro entre dos países.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============== O LUGAR ============== -->
-<section class="block cardapio" id="cardapio">
+<!-- ============== A PROPOSTA ============== -->
+<section class="block proposta" id="proposta">
   <div class="container">
-    <div class="board-wrap"><div class="cardapio-intro reveal">
-      <div class="eyebrow verde">
-        <span data-lang-pt>02 · A programação</span>
-        <span data-lang-es>02 · La programación</span>
-      </div>
-      <h2>
-        <span data-lang-pt>Elis! Uma fantasia biográfica</span>
-        <span data-lang-es>¡Elis! Una fantasía biográfica</span>
-      </h2>
-      <p class="serve-text" data-lang-pt>E se uma das maiores cantoras de todos os tempos decidisse, ainda criança, que nunca mais iria cantar na vida? Isso aconteceu de verdade com a pequena Elis Regina. O que poderia fazê-la mudar de ideia?</p>
-      <p class="serve-text" data-lang-pt>O seu novo amigo, e o primeiro de seus milhões de fãs, acha que sabe o que pode fazer para mostrar o quanto a música é importante para ela e o quanto ela é importante para a música. Os dois embarcarão juntos em uma aventura por um mundo onde a história, a música e a amizade sempre andam juntas.</p>
-      <p class="serve-text" data-lang-pt><strong>"Elis!" é uma Fantasia Biográfica</strong> onde temos a oportunidade de conhecer e revisitar momentos e encontros que fizeram parte da vida de Elis, da música brasileira e do próprio país.</p>
-      <p class="serve-text" data-lang-pt>Diferente de uma biografia convencional, essa aventura se passa em uma viagem por um mundo de fantasia onde seres humanos e pássaros convivem juntos, cercados pela magia que a música e a cultura brasileira proporciona.</p>
-      <p class="serve-text" data-lang-pt>Neste mundo o passado, o presente e o futuro se misturam para que, junto com a própria Elis, possamos conhecer as várias histórias e pessoas que fizeram parte de sua vida.</p>
-      <p class="serve-text ficha-livro" data-lang-pt><strong>Obra:</strong> Elis! Uma fantasia biográfica<br><strong>Autor:</strong> Gustavo Duarte<br><strong>Local:</strong> Casa Doble Chapa, José Ignacio<br><strong>Data:</strong> entre janeiro e março de 2027</p>
-      <p class="serve-text" data-lang-es>¿Y si una de las mayores cantantes de todos los tiempos decidiera, aún niña, que nunca más iba a cantar en la vida? Eso le pasó de verdad a la pequeña Elis Regina. ¿Qué podría hacerla cambiar de idea?</p>
-      <p class="serve-text" data-lang-es>Su nuevo amigo, y el primero de sus millones de fans, cree saber qué puede hacer para mostrarle cuánto importa la música para ella y cuánto importa ella para la música. Los dos emprenderán juntos una aventura por un mundo donde la historia, la música y la amistad siempre van juntas.</p>
-      <p class="serve-text" data-lang-es><strong>"¡Elis!" es una Fantasía Biográfica</strong> donde tenemos la oportunidad de conocer y revisitar momentos y encuentros que formaron parte de la vida de Elis, de la música brasileña y del propio país.</p>
-      <p class="serve-text" data-lang-es>A diferencia de una biografía convencional, esta aventura transcurre en un viaje por un mundo de fantasía donde seres humanos y pájaros conviven juntos, rodeados por la magia que la música y la cultura brasileña proporcionan.</p>
-      <p class="serve-text" data-lang-es>En este mundo el pasado, el presente y el futuro se mezclan para que, junto con la propia Elis, podamos conocer las varias historias y personas que formaron parte de su vida.</p>
-      <p class="serve-text ficha-livro" data-lang-es><strong>Obra:</strong> ¡Elis! Una fantasía biográfica<br><strong>Autor:</strong> Gustavo Duarte<br><strong>Lugar:</strong> Casa Doble Chapa, José Ignacio<br><strong>Fecha:</strong> entre enero y marzo de 2027</p>
-
-    </div><a class="board-img reveal" href="https://doblechapa.art/doble-chapa-documento-elis.html">
-      <img src="https://carolferres.github.io/content/CasaDCVertical.png" alt="Elis! Uma fantasia biográfica, por Gustavo Duarte" loading="lazy">
-    </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============== DOBLE CHAPA ============== -->
-<section class="block lugar" id="lugar">
-  <div class="container">
-    <div class="lugar-grid">
+    <div class="casa-grid">
       <div class="reveal">
-        <div class="eyebrow">
-          <span data-lang-pt>03 · A casa</span>
-          <span data-lang-es>03 · La casa</span>
+        <div class="label eyebrow">
+          <span data-lang-pt>02 · A proposta</span>
+          <span data-lang-es>02 · La propuesta</span>
         </div>
         <h2>
-          <span data-lang-pt>De portas abertas</span>
-          <span data-lang-es>De puertas abiertas</span>
+          <span data-lang-pt>Uma casa cultural<br>binacional</span>
+          <span data-lang-es>Una casa cultural<br>binacional</span>
         </h2>
-        <div class="body">
-          <p data-lang-pt>
-            A casa fica no coração de José Ignacio – um povoado de pescadores no litoral uruguaio e ponto de encontro cultural. Por fora, a <strong>Casa Doble Chapa</strong> é uma casa simples perto da praça. A frente guarda o mesmo gesto de antes – discreta na rua, generosa na soleira.
-          </p>
-          <p data-lang-es>
-            La casa está en el corazón de José Ignacio – un pueblo de pescadores en la costa uruguaya y punto de encuentro cultural. Por fuera, <strong>Casa Doble Chapa</strong> es una casa simple cerca de la plaza. El frente conserva el mismo gesto de antes – discreta en la calle, generosa en el umbral.
-          </p>
-        </div>
       </div>
+      <div class="body reveal split-line">
+        <p data-lang-pt>Sediada em <strong>José Ignacio</strong>, a casa apresenta produções culturais brasileiras ao mercado internacional, fortalece o intercâmbio e as conexões entre Brasil e América Latina. De&nbsp;janeiro a abril, a programação se organiza em quatro eixos permanentes.</p>
+        <p data-lang-es>Con sede en <strong>José Ignacio</strong>, la casa presenta producciones culturales brasileñas al mercado internacional, fortalece el intercambio y las conexiones entre Brasil y América Latina. De&nbsp;enero a abril, la programación se organiza en cuatro ejes permanentes.</p>
+      </div>
+    </div>
+    <div class="eixos reveal">
+      <div class="eixo">
+        <div class="eixo-head"><span class="plate">1</span><h3>Arte</h3></div>
+        <p data-lang-pt>Exposições e encontros com artistas brasileiros de diferentes linguagens, abertos ao circuito de galerias, curadores e colecionadores de José Ignacio.</p>
+        <p data-lang-es>Exposiciones y encuentros con artistas brasileños de distintos lenguajes, abiertos al circuito de galerías, curadores y coleccionistas de José Ignacio.</p>
+      </div>
+      <div class="eixo">
+        <div class="eixo-head"><span class="plate">2</span><h3>Música</h3></div>
+        <p data-lang-pt>Sessões de escuta em vinil e encontros musicais com artistas brasileiros, em formato íntimo, que levam a música do Brasil ao público e aos programadores da região.</p>
+        <p data-lang-es>Sesiones de escucha en vinilo y encuentros musicales con artistas brasileños, en formato íntimo, que llevan la música de Brasil al público y a los programadores de la región.</p>
+      </div>
+      <div class="eixo">
+        <div class="eixo-head"><span class="plate">3</span><h3>Literatura</h3></div>
+        <p data-lang-pt>Lançamentos de livros de autores brasileiros, com leituras e conversas que aproximam as obras de editoras, tradutores e leitores de língua espanhola.</p>
+        <p data-lang-es>Lanzamientos de libros de autores brasileños, con lecturas y conversaciones que acercan las obras a editoriales, traductores y lectores de habla hispana.</p>
+      </div>
+      <div class="eixo">
+        <div class="eixo-head"><span class="plate">4</span><h3>Audiovisual</h3></div>
+        <p data-lang-pt>Salas de roteiro para projetos audiovisuais em coprodução, que conectam realizadores brasileiros a produtores latino-americanos.</p>
+        <p data-lang-es>Salas de guion para proyectos audiovisuales en coproducción, que conectan realizadores brasileños con productores latinoamericanos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== POR QUE JOSÉ IGNACIO ============== -->
+<section class="block ji" id="ji">
+  <div class="container">
+    <div class="casa-grid">
       <div class="reveal">
-        <img class="lugar-img" src="https://carolferres.github.io/content/Frente-nova.jpg" alt="Frente da Casa Doble Chapa em José Ignacio – fachada simples de casa de pescador"/>
+        <div class="label eyebrow">
+          <span data-lang-pt>03 · O lugar</span>
+          <span data-lang-es>03 · El lugar</span>
+        </div>
+        <h2>
+          <span data-lang-pt>Por que José Ignacio?</span>
+          <span data-lang-es>¿Por qué José Ignacio?</span>
+        </h2>
       </div>
+      <div class="body reveal split-line">
+        <p data-lang-pt>Antigo povoado de pescadores numa pequena península entre duas lagoas, a 40 km de Punta del Este, <strong>José Ignacio</strong> se tornou um dos destinos mais exclusivos da América do Sul.</p>
+        <p data-lang-pt>Regras locais preservam a escala de aldeia. No verão, o povoado recebe viajantes do mundo inteiro, e o <strong>Parador La Huella</strong> é sua mesa mais&nbsp;famosa.</p>
+        <p data-lang-es>Antiguo pueblo de pescadores en una pequeña península entre dos lagunas, a 40 km de Punta del Este, <strong>José Ignacio</strong> se convirtió en uno de los destinos más exclusivos de América del Sur.</p>
+        <p data-lang-es>Reglas locales preservan la escala de aldea. En verano, el pueblo recibe viajeros de todo el mundo, y el <strong>Parador La Huella</strong> es su mesa más&nbsp;famosa.</p>
+      </div>
+    </div>
+    <div class="press reveal">
+      <a class="eco-card press-card" href="https://forbes.com.br/forbes-life/2026/01/por-que-jose-ignacio-virou-o-refugio-da-elite-de-nova-york/" target="_blank" rel="noopener">
+        <div class="when">Forbes Brasil</div>
+        <h3>Por que José Ignacio virou o refúgio da elite de Nova York</h3>
+        <div class="meta" data-lang-pt>jan. 2026</div><div class="meta" data-lang-es>ene. 2026</div>
+        <p data-lang-pt>O balneário atrai compradores e visitantes dos Estados Unidos e da Europa, com imóveis em valorização há mais de 35 anos.</p>
+        <p data-lang-es>El balneario atrae compradores y visitantes de Estados Unidos y Europa, con propiedades que se valorizan hace más de 35 años.</p>
+        <span class="press-link" data-lang-pt>Ler matéria →</span><span class="press-link" data-lang-es>Leer nota →</span>
+      </a>
+      <a class="eco-card press-card" href="https://www.theartnewspaper.com/2025/07/21/a-new-art-foundation-in-uruguay-highlights-latin-american-artists-and-curators" target="_blank" rel="noopener">
+        <div class="when">The Art Newspaper</div>
+        <h3>A new art foundation in Uruguay highlights Latin American artists and curators</h3>
+        <div class="meta" data-lang-pt>jul. 2025</div><div class="meta" data-lang-es>jul. 2025</div>
+        <p data-lang-pt>A Fundação Cervieri Monsuárez passa a ter programação o ano todo para tornar José Ignacio um polo de arte latino-americana.</p>
+        <p data-lang-es>La Fundación Cervieri Monsuárez pasa a programar todo el año para convertir José Ignacio en un polo de arte latinoamericano.</p>
+        <span class="press-link" data-lang-pt>Ler matéria →</span><span class="press-link" data-lang-es>Leer nota →</span>
+      </a>
+      <a class="eco-card press-card" href="https://www.theworlds50best.com/stories/News/latin-americas-50-best-restaurants-2025-51-100-list.html" target="_blank" rel="noopener">
+        <div class="when">The World’s 50 Best</div>
+        <h3>Latin America’s 50 Best Restaurants 2025</h3>
+        <div class="meta" data-lang-pt>nov. 2025</div><div class="meta" data-lang-es>nov. 2025</div>
+        <p data-lang-pt>O Parador La Huella, na Playa Brava, segue entre os melhores restaurantes da América Latina, presença constante no ranking.</p>
+        <p data-lang-es>El Parador La Huella, en Playa Brava, sigue entre los mejores restaurantes de América Latina, presencia constante en el ranking.</p>
+        <span class="press-link" data-lang-pt>Ler matéria →</span><span class="press-link" data-lang-es>Leer nota →</span>
+      </a>
+      <a class="eco-card press-card" href="https://marcapaisuruguay.gub.uy/en/?p=67859" target="_blank" rel="noopener">
+        <div class="when">TIME</div>
+        <h3>World’s Greatest Places 2021</h3>
+        <div class="meta" data-lang-pt>2021</div><div class="meta" data-lang-es>2021</div>
+        <p data-lang-pt>A revista incluiu José Ignacio entre os 100 lugares extraordinários do mundo para conhecer.</p>
+        <p data-lang-es>La revista incluyó a José Ignacio entre los 100 lugares extraordinarios del mundo para conocer.</p>
+        <span class="press-link" data-lang-pt>Ler matéria →</span><span class="press-link" data-lang-es>Leer nota →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -589,18 +666,18 @@
   <div class="container">
     <div class="reveal">
       <div class="eyebrow verde">
-        <span data-lang-pt>04 · O circuito de arte de José Ignacio</span>
-        <span data-lang-es>04 · El circuito de arte de José Ignacio</span>
+        <span data-lang-pt>04 · O circuito de José Ignacio</span>
+        <span data-lang-es>04 · El circuito de José Ignacio</span>
       </div>
       <h2>
         <span data-lang-pt>Entre boas companhias</span>
         <span data-lang-es>Entre buenas compañías</span>
       </h2>
       <p class="eco-intro" data-lang-pt>
-        A Casa Doble Chapa se soma a um circuito cultural que já existe em José Ignacio, trazendo uma presença brasileira de rosto próprio, em escala íntima.
+        A Casa Doble Chapa se soma a um <strong>circuito cultural</strong> que já existe em José Ignacio, trazendo uma presença brasileira de rosto próprio, em escala íntima.
       </p>
       <p class="eco-intro" data-lang-es>
-        Casa Doble Chapa se suma a un circuito cultural que ya existe en José Ignacio, trayendo una presencia brasileña con rostro propio, en escala íntima.
+        Casa Doble Chapa se suma a un <strong>circuito cultural</strong> que ya existe en José Ignacio, trayendo una presencia brasileña con rostro propio, en escala íntima.
       </p>
     </div>
 
@@ -635,8 +712,8 @@
         <h3>Feria Gastronómica</h3>
         <div class="meta" data-lang-pt>Praça de José Ignacio</div>
         <div class="meta" data-lang-es>Plaza de José Ignacio</div>
-        <p data-lang-pt>Feira de verão na praça principal que reúne os restaurantes, bodegas e produtores da região – de La Huella a La Susana. Declarada de Interesse Turístico, junta cozinha, vinho e encontro ao ar livre.</p>
-        <p data-lang-es>Feria de verano en la plaza principal que reúne a los restaurantes, bodegas y productores de la zona – de La Huella a La Susana. Declarada de Interés Turístico, junta cocina, vino y encuentro al aire libre.</p>
+        <p data-lang-pt>Feira de verão na praça principal que reúne os restaurantes, bodegas e produtores da região, de La Huella a La Susana. Declarada de Interesse Turístico, junta cozinha, vinho e encontro ao ar livre.</p>
+        <p data-lang-es>Feria de verano en la plaza principal que reúne a los restaurantes, bodegas y productores de la zona, de La Huella a La Susana. Declarada de Interés Turístico, junta cocina, vino y encuentro al aire libre.</p>
       </div>
       <div class="eco-card uy">
         <div class="when" data-lang-pt>fotografia</div>
@@ -644,8 +721,8 @@
         <h3>Focus</h3>
         <div class="meta" data-lang-pt>Festival de Fotografia de José Ignacio</div>
         <div class="meta" data-lang-es>Festival de Fotografía de José Ignacio</div>
-        <p data-lang-pt>Festival de fotografia espalhado pelo povoado – do Faro à Galería de las Misiones e aos espaços públicos. Leva imagem e olhar para as ruas de José Ignacio.</p>
-        <p data-lang-es>Festival de fotografía repartido por el pueblo – del Faro a la Galería de las Misiones y los espacios públicos. Lleva imagen y mirada a las calles de José Ignacio.</p>
+        <p data-lang-pt>Festival de fotografia espalhado pelo povoado, do Faro à Galería de las Misiones e aos espaços públicos. Leva imagem e olhar para as ruas de José Ignacio.</p>
+        <p data-lang-es>Festival de fotografía repartido por el pueblo, del Faro a la Galería de las Misiones y los espacios públicos. Lleva imagen y mirada a las calles de José Ignacio.</p>
       </div>
       <div class="eco-card uy">
         <div class="when" data-lang-pt>feira</div>
@@ -684,72 +761,94 @@
   </div>
 </section>
 
+<!-- ============== DOBLE CHAPA ============== -->
+<section class="block lugar" id="lugar">
+  <div class="container">
+    <div class="lugar-grid">
+      <div class="reveal">
+        <div class="eyebrow">
+          <span data-lang-pt>05 · A casa</span>
+          <span data-lang-es>05 · La casa</span>
+        </div>
+        <h2>
+          <span data-lang-pt>De portas abertas</span>
+          <span data-lang-es>De puertas abiertas</span>
+        </h2>
+        <div class="body">
+          <p data-lang-pt>A casa fica no coração de <strong>José Ignacio</strong>, um povoado de pescadores no litoral uruguaio e ponto de encontro cultural.</p>
+          <p data-lang-pt>Por fora, a <strong>Casa Doble Chapa</strong> é uma casa simples perto da praça. A frente guarda o mesmo gesto de antes: discreta na rua, generosa na soleira.</p>
+          <p data-lang-pt>Lá dentro, uma discoteca de vinil reúne música brasileira para sessões de escuta, e cresce com os discos trazidos pela comunidade.</p>
+          <p data-lang-es>La casa está en el corazón de <strong>José Ignacio</strong>, un pueblo de pescadores en la costa uruguaya y punto de encuentro cultural.</p>
+          <p data-lang-es>Por fuera, <strong>Casa Doble Chapa</strong> es una casa simple cerca de la plaza. El frente conserva el mismo gesto de antes: discreta en la calle, generosa en el umbral.</p>
+          <p data-lang-es>Adentro, una discoteca de vinilos reúne música brasileña para sesiones de escucha, y crece con los discos que trae la comunidad.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <img class="lugar-img" src="https://carolferres.github.io/content/Frente-nanquim.png" alt="Ilustração em nanquim e aquarela da fachada da Casa Doble Chapa em José Ignacio"/>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============== IDEALIZADORA ============== -->
 <section class="block ide" id="ide">
   <div class="container">
     <div class="ide-grid">
       <div class="ide-text reveal">
         <div class="eyebrow">
-          <span data-lang-pt>05 · Idealizadora</span>
-          <span data-lang-es>05 · Idealizadora</span>
+          <span data-lang-pt>06 · Idealizadora</span>
+          <span data-lang-es>06 · Idealizadora</span>
         </div>
         <h2>Carolina Ferrés</h2>
 
-        <p data-lang-pt>
-          Sou uruguaia, vivo e trabalho no Brasil desde a infância, e atuo na construção de pontes culturais, institucionais e narrativas entre o universo brasileiro e o hispano-americano. A Casa Doble Chapa nasce dessa dupla pertença. O nome vem da fronteira, onde os carros já circularam com duas placas – uma brasileira e uma uruguaia – pertencendo aos dois lados ao mesmo tempo.
-        </p>
-        <p data-lang-es>
-          Soy uruguaya, vivo y trabajo en Brasil desde la infancia, y actúo en la construcción de puentes culturales, institucionales y narrativos entre el universo brasileño y el hispanoamericano. Casa Doble Chapa nace de esa doble pertenencia. El nombre viene de la frontera, donde los autos circularon con dos matrículas – una brasileña y una uruguaya – perteneciendo a los dos lados al mismo tiempo.
-        </p>
+        <p data-lang-pt>Atuo na construção de pontes culturais, institucionais e narrativas entre o universo brasileiro e o hispano&#8209;americano. A Casa Doble Chapa nasce dessa dupla&nbsp;pertença.</p>
+        <p data-lang-pt>O nome vem da fronteira, onde os carros já circularam com duas placas, uma brasileira e uma uruguaia, pertencendo aos dois lados ao mesmo&nbsp;tempo.</p>
+        <p data-lang-es>Actúo en la construcción de puentes culturales, institucionales y narrativos entre el universo brasileño y el hispanoamericano. Casa Doble Chapa nace de esa doble&nbsp;pertenencia.</p>
+        <p data-lang-es>El nombre viene de la frontera, donde los autos circularon con dos matrículas, una brasileña y una uruguaya, perteneciendo a los dos lados al mismo&nbsp;tiempo.</p>
       </div>
       <div class="ide-photos reveal">
         <img src="https://carolferres.github.io/content/CaroFerres.jpg" alt="Carolina Ferrés, idealizadora da Casa Doble Chapa"/>
-        <img src="https://carolferres.github.io/content/Doblechapa.jpg" alt="As duas placas – uma brasileira e uma uruguaia – que dão nome à casa"/>
+        <img src="https://carolferres.github.io/content/Doblechapa.jpg" alt="As duas placas, uma brasileira e uma uruguaia, que dão nome à casa"/>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============== CONVITE ============== -->
+<!-- ============== CONTATO ============== -->
 <section class="block convite" id="convite">
   <div class="container">
-    <div class="convite-grid">
+    <div class="casa-grid">
       <div class="reveal">
         <div class="eyebrow">
-          <span data-lang-pt>06 · Apresentação</span>
-          <span data-lang-es>06 · Presentación</span>
+          <span data-lang-pt>07 · Contato</span>
+          <span data-lang-es>07 · Contacto</span>
         </div>
         <h2>
-          <span data-lang-pt>Sobre a <span class="accent">Casa</span></span>
-          <span data-lang-es>Sobre la <span class="accent">Casa</span></span>
+          <span data-lang-pt>Vamos sentar à mesa</span>
+          <span data-lang-es>Sentémonos a la mesa</span>
         </h2>
-        <div class="body">
-          <p data-lang-pt>
-            Casa Doble Chapa é uma casa cultural binacional, sediada em José Ignacio, Uruguai, dedicada a fortalecer o intercâmbio cultural entre Brasil e Uruguai. A proposta é manter uma programação cultural recorrente, com lançamentos de livros, exposições de fotografia e arte, salas de roteiro para projetos audiovisuais em coprodução, e pequenos encontros musicais. Literatura, artes visuais, audiovisual e música funcionam como eixos permanentes da programação da casa. O lançamento de Elis! Uma fantasia biográfica, de Gustavo Duarte, inaugura essa programação e marca o início da linha de Literatura da casa.
-          </p>
-          <p data-lang-es>
-            Casa Doble Chapa es una casa cultural binacional, con sede en José Ignacio, Uruguay, dedicada a fortalecer el intercambio cultural entre Brasil y Uruguay. La propuesta es mantener una programación cultural recurrente, con lanzamientos de libros, exposiciones de fotografía y arte, salas de guion para proyectos audiovisuales en coproducción, y pequeños encuentros musicales. Literatura, artes visuales, audiovisual y música funcionan como ejes permanentes de la programación de la casa. El lanzamiento de ¡Elis! Una fantasía biográfica, de Gustavo Duarte, inaugura esta programación y marca el inicio de la línea de Literatura de la casa.
-          </p>
-        </div>
       </div>
-      <div class="contato-info reveal">
-        <div class="contato-item">
-          <div class="tag">E-mail</div>
-          <a href="mailto:cafe@cafenarua.org">cafe@cafenarua.org</a>
-        </div>
-        <div class="contato-item">
-          <div class="tag" data-lang-pt>Contato · Brasil</div>
-          <div class="tag" data-lang-es>Contacto · Brasil</div>
-          <a href="tel:+5511993773335">+55 11 9 9377 3335</a>
-        </div>
-        <div class="contato-item">
-          <div class="tag" data-lang-pt>Contato · Uruguai</div>
-          <div class="tag" data-lang-es>Contacto · Uruguay</div>
-          <a href="tel:+59897955654">+598 97 955 654</a>
-        </div>
+      <div class="body reveal split-line">
+        <p data-lang-pt>Será um prazer receber você na <strong>Casa Doble Chapa</strong>. Escreva para saber da programação da temporada ou propor um encontro.</p>
+        <p data-lang-es>Será un placer recibirle en <strong>Casa Doble Chapa</strong>. Escriba para conocer la programación de la temporada o proponer un encuentro.</p>
       </div>
     </div>
-
+    <div class="contato-row reveal">
+      <div class="contato-item">
+        <div class="tag">E-mail</div>
+        <a href="mailto:cafe@cafenarua.org">cafe@cafenarua.org</a>
+      </div>
+      <div class="contato-item">
+        <div class="tag" data-lang-pt>Contato · Brasil</div>
+        <div class="tag" data-lang-es>Contacto · Brasil</div>
+        <a href="tel:+5511993773335">+55 11 9 9377 3335</a>
+      </div>
+      <div class="contato-item">
+        <div class="tag" data-lang-pt>Contato · Uruguai</div>
+        <div class="tag" data-lang-es>Contacto · Uruguay</div>
+        <a href="tel:+59897955654">+598 97 955 654</a>
+      </div>
+    </div>
   </div>
 </section>
 
